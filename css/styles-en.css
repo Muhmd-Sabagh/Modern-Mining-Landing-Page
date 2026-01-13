@@ -1,0 +1,123 @@
+/* =====================================================
+   Modern Mining - English Styles (LTR)
+   Overrides for English/LTR version
+   ===================================================== */
+
+/* ==================== Base LTR Overrides ==================== */
+[dir="ltr"] body,
+html[lang="en"] body {
+  font-family: var(--font-english);
+  direction: ltr;
+}
+
+/* ==================== Typography LTR ==================== */
+[dir="ltr"] .section-title::after {
+  right: auto;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* ==================== Navbar LTR ==================== */
+[dir="ltr"] .nav-link::after {
+  right: auto;
+  left: var(--space-4);
+  transform-origin: left;
+}
+
+[dir="ltr"] .navbar-nav {
+  right: auto;
+  left: -100%;
+}
+
+[dir="ltr"] .navbar-nav.active {
+  right: auto;
+  left: 0;
+}
+
+[dir="ltr"] .lang-switcher {
+  margin-right: 0;
+  margin-left: var(--space-4);
+}
+
+/* ==================== Vision Mission Cards LTR ==================== */
+[dir="ltr"] .vm-card {
+  border-right: none;
+  border-left: 4px solid var(--accent-gold);
+}
+
+/* ==================== News Card Date LTR ==================== */
+[dir="ltr"] .news-card-date {
+  right: auto;
+  left: var(--space-4);
+}
+
+/* ==================== Footer LTR ==================== */
+[dir="ltr"] .footer-title::after {
+  right: auto;
+  left: 0;
+}
+
+[dir="ltr"] .footer-links a::before {
+  content: "→";
+  transform: translateX(-10px);
+}
+
+[dir="ltr"] .footer-links a:hover {
+  padding-right: 0;
+  padding-left: var(--space-3);
+}
+
+/* ==================== Back to Top LTR ==================== */
+[dir="ltr"] .back-to-top {
+  left: auto;
+  right: var(--space-8);
+}
+
+@media (max-width: 767.98px) {
+  [dir="ltr"] .back-to-top {
+    left: auto;
+    right: var(--space-4);
+  }
+}
+
+/* ==================== About Image Badge LTR ==================== */
+[dir="ltr"] .about-image-badge {
+  left: auto;
+  right: -20px;
+}
+
+/* ==================== Product Card Link LTR ==================== */
+[dir="ltr"] .product-card-link:hover i {
+  transform: translateX(5px);
+}
+
+/* ==================== Contact List LTR ==================== */
+[dir="ltr"] .contact-list li {
+  flex-direction: row;
+}
+
+/* ==================== Font Adjustments for English ==================== */
+[dir="ltr"] h1,
+[dir="ltr"] h2,
+[dir="ltr"] h3,
+[dir="ltr"] h4,
+[dir="ltr"] h5,
+[dir="ltr"] h6 {
+  letter-spacing: var(--ls-tight);
+}
+
+[dir="ltr"] .hero-title {
+  letter-spacing: -0.02em;
+}
+
+[dir="ltr"] .btn {
+  font-family: var(--font-english);
+}
+
+[dir="ltr"] .nav-link {
+  font-family: var(--font-english);
+}
+
+[dir="ltr"] .form-control {
+  font-family: var(--font-english);
+}
