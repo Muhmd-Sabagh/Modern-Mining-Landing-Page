@@ -66,9 +66,9 @@
   );
 
   /* ==================== Typography ==================== */
-  /* Arabic fonts */
+  /* Arabic fonts - Cairo as primary */
   --font-arabic: "IBM Plex Sans Arabic", "Cairo", sans-serif;
-  /* English fonts */
+  /* English fonts - Montserrat as primary */
   --font-english: "IBM Plex Sans", "Montserrat", sans-serif;
   /* Current font (changes with language) */
   --font-primary: var(--font-arabic);

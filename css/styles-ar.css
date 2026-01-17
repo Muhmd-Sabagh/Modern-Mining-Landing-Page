@@ -3,67 +3,6 @@
    Main stylesheet for Arabic version
    ===================================================== */
 
-/* ==================== Font Face Declarations ==================== */
-@font-face {
-  font-family: "IBM Plex Sans Arabic";
-  src: url("../fonts/IBM_Plex_Sans_Arabic/IBMPlexSansArabic-Regular.ttf")
-    format("truetype");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "IBM Plex Sans Arabic";
-  src: url("../fonts/IBM_Plex_Sans_Arabic/IBMPlexSansArabic-Medium.ttf")
-    format("truetype");
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "IBM Plex Sans Arabic";
-  src: url("../fonts/IBM_Plex_Sans_Arabic/IBMPlexSansArabic-SemiBold.ttf")
-    format("truetype");
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "IBM Plex Sans Arabic";
-  src: url("../fonts/IBM_Plex_Sans_Arabic/IBMPlexSansArabic-Bold.ttf")
-    format("truetype");
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Cairo";
-  src: url("../fonts/Cairo/static/Cairo-Regular.ttf") format("truetype");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Cairo";
-  src: url("../fonts/Cairo/static/Cairo-SemiBold.ttf") format("truetype");
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Cairo";
-  src: url("../fonts/Cairo/static/Cairo-Bold.ttf") format("truetype");
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-
 /* ==================== Global Reset & Base ==================== */
 *,
 *::before,
@@ -159,6 +98,16 @@ img {
 .section-header {
   text-align: center;
   margin-bottom: var(--space-12);
+  /* Default visible state - AOS will handle animation */
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
+}
+
+/* Override AOS initial hidden state - show by default until AOS takes over */
+.section-header[data-aos]:not(.aos-animate):not(.aos-init) {
+  opacity: 1 !important;
+  visibility: visible !important;
 }
 
 .section-title {
@@ -432,6 +381,7 @@ img {
   align-items: center;
   overflow: hidden;
   background: var(--primary-dark);
+  padding-top: var(--navbar-height, 80px); /* Space for fixed navbar */
 }
 
 .hero-bg {
@@ -454,11 +404,27 @@ img {
   z-index: 1;
 }
 
+.hero .container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+
 .hero-content {
   position: relative;
   z-index: 2;
   max-width: 800px;
   color: var(--neutral-white);
+  /* Default visible state - AOS will handle animation */
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
+}
+
+/* Override AOS initial hidden state - show by default until AOS takes over */
+.hero-content[data-aos]:not(.aos-animate):not(.aos-init) {
+  opacity: 1 !important;
+  visibility: visible !important;
 }
 
 .hero-badge {
@@ -1045,6 +1011,11 @@ img {
   gap: var(--space-12);
 }
 
+.contact-info {
+  opacity: 1; /* Fallback - will be animated by GSAP/AOS */
+  transform: translateX(0); /* Fallback - will be animated by GSAP/AOS */
+}
+
 .contact-info h3 {
   margin-bottom: var(--space-6);
 }
@@ -1124,11 +1095,34 @@ img {
   transform: translateY(-3px);
 }
 
+.contact-info {
+  /* Default visible state - AOS will handle animation */
+  opacity: 1;
+  transform: translateX(0);
+  visibility: visible;
+}
+
+/* Override AOS initial hidden state - show by default until AOS takes over */
+.contact-info[data-aos]:not(.aos-animate):not(.aos-init) {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
 /* Contact Form */
 .contact-form-wrapper {
   background: var(--neutral-100);
   padding: var(--space-10);
   border-radius: var(--radius-xl);
+  /* Default visible state - AOS will handle animation */
+  opacity: 1;
+  transform: translateX(0);
+  visibility: visible;
+}
+
+/* Override AOS initial hidden state - show by default until AOS takes over */
+.contact-form-wrapper[data-aos]:not(.aos-animate):not(.aos-init) {
+  opacity: 1 !important;
+  visibility: visible !important;
 }
 
 .contact-form-wrapper h3 {
@@ -1380,192 +1374,4 @@ textarea.form-control {
 .back-to-top:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 25px rgba(201, 162, 39, 0.5);
-}
-
-/* ==================== Responsive Styles ==================== */
-
-/* Large Devices (desktops, less than 1200px) */
-@media (max-width: 1199.98px) {
-  .hero-title {
-    font-size: var(--fs-4xl);
-  }
-
-  .products-grid,
-  .why-us-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .board-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .footer-main {
-    grid-template-columns: 1fr 1fr;
-    gap: var(--space-8);
-  }
-}
-
-/* Medium Devices (tablets, less than 992px) */
-@media (max-width: 991.98px) {
-  .navbar-nav {
-    position: fixed;
-    top: 0;
-    right: -100%;
-    width: 280px;
-    height: 100vh;
-    background: var(--primary-dark);
-    flex-direction: column;
-    align-items: flex-start;
-    padding: var(--space-20) var(--space-6);
-    transition: right var(--transition-base);
-    box-shadow: var(--shadow-2xl);
-  }
-
-  .navbar-nav.active {
-    right: 0;
-  }
-
-  .nav-link {
-    width: 100%;
-    padding: var(--space-4);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  }
-
-  .navbar-toggler {
-    display: flex;
-  }
-
-  .lang-switcher {
-    margin-right: var(--space-6);
-  }
-
-  .about-content {
-    grid-template-columns: 1fr;
-    gap: var(--space-8);
-  }
-
-  .about-image {
-    order: -1;
-  }
-
-  .contact-wrapper {
-    grid-template-columns: 1fr;
-  }
-
-  .news-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-/* Small Devices (landscape phones, less than 768px) */
-@media (max-width: 767.98px) {
-  :root {
-    --fs-4xl: 2.5rem;
-    --fs-5xl: 3rem;
-  }
-
-  .section {
-    padding: var(--space-12) 0;
-  }
-
-  .hero {
-    min-height: auto;
-    padding: var(--space-32) 0 var(--space-16);
-  }
-
-  .hero-title {
-    font-size: var(--fs-3xl);
-  }
-
-  .hero-subtitle {
-    font-size: var(--fs-md);
-  }
-
-  .hero-stats {
-    flex-wrap: wrap;
-    gap: var(--space-4);
-  }
-
-  .hero-stat {
-    flex: 1 1 calc(50% - var(--space-2));
-  }
-
-  .about-features,
-  .vision-mission {
-    grid-template-columns: 1fr;
-  }
-
-  .products-grid,
-  .board-grid,
-  .why-us-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .news-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .form-row {
-    grid-template-columns: 1fr;
-  }
-
-  .footer-main {
-    grid-template-columns: 1fr;
-    gap: var(--space-8);
-  }
-
-  .footer-bottom {
-    flex-direction: column;
-    gap: var(--space-4);
-    text-align: center;
-  }
-
-  .back-to-top {
-    left: var(--space-4);
-    bottom: var(--space-4);
-    width: 45px;
-    height: 45px;
-  }
-}
-
-/* Extra Small Devices (portrait phones, less than 576px) */
-@media (max-width: 575.98px) {
-  .hero-btns {
-    flex-direction: column;
-  }
-
-  .hero-btns .btn {
-    width: 100%;
-  }
-
-  .section-title {
-    font-size: var(--fs-2xl);
-  }
-
-  .contact-form-wrapper {
-    padding: var(--space-6);
-  }
-
-  .contact-social {
-    flex-wrap: wrap;
-  }
-}
-
-/* ==================== Print Styles ==================== */
-@media print {
-  .navbar,
-  .back-to-top,
-  .scroll-indicator {
-    display: none !important;
-  }
-
-  .hero {
-    min-height: auto;
-    padding: var(--space-8);
-  }
-
-  .section {
-    padding: var(--space-8) 0;
-    page-break-inside: avoid;
-  }
 }

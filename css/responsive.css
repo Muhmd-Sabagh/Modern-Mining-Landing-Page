@@ -1,0 +1,197 @@
+/* =====================================================
+   Modern Mining - Responsive Styles
+   Media queries for different screen sizes
+   ===================================================== */
+
+/* ==================== Responsive Styles ==================== */
+
+/* Large Devices (desktops, less than 1200px) */
+@media (max-width: 1199.98px) {
+  .hero-title {
+    font-size: var(--fs-4xl);
+  }
+
+  .products-grid,
+  .why-us-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .board-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer-main {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-8);
+  }
+}
+
+/* Medium Devices (tablets, less than 992px) */
+@media (max-width: 991.98px) {
+  .navbar-nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 280px;
+    height: 100vh;
+    background: var(--primary-dark);
+    flex-direction: column;
+    align-items: flex-start;
+    padding: var(--space-20) var(--space-6);
+    transition: right var(--transition-base);
+    box-shadow: var(--shadow-2xl);
+  }
+
+  .navbar-nav.active {
+    right: 0;
+  }
+
+  .nav-link {
+    width: 100%;
+    padding: var(--space-4);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .navbar-toggler {
+    display: flex;
+  }
+
+  .lang-switcher {
+    margin-right: var(--space-6);
+  }
+
+  .about-content {
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+  }
+
+  .about-image {
+    order: -1;
+  }
+
+  .contact-wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .news-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Small Devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) {
+  :root {
+    --fs-4xl: 2.5rem;
+    --fs-5xl: 3rem;
+  }
+
+  .section {
+    padding: var(--space-12) 0;
+  }
+
+  .hero {
+    min-height: auto;
+    padding: var(--space-32) 0 var(--space-16);
+  }
+
+  .hero-title {
+    font-size: var(--fs-3xl);
+  }
+
+  .hero-subtitle {
+    font-size: var(--fs-md);
+  }
+
+  .hero-stats {
+    flex-wrap: wrap;
+    gap: var(--space-4);
+  }
+
+  .hero-stat {
+    flex: 1 1 calc(50% - var(--space-2));
+  }
+
+  .about-features,
+  .vision-mission {
+    grid-template-columns: 1fr;
+  }
+
+  .products-grid,
+  .board-grid,
+  .why-us-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .news-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-main {
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: var(--space-4);
+    text-align: center;
+  }
+
+  .back-to-top {
+    left: var(--space-4);
+    bottom: var(--space-4);
+    width: 45px;
+    height: 45px;
+  }
+}
+
+/* Extra Small Devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+  .hero-btns {
+    flex-direction: column;
+  }
+
+  .hero-btns .btn {
+    width: 100%;
+  }
+
+  .section-title {
+    font-size: var(--fs-2xl);
+  }
+
+  .about-image-badge {
+		padding: var(--space-4);
+		left: -10px;
+  }
+
+  .contact-form-wrapper {
+    padding: var(--space-6);
+  }
+
+  .contact-social {
+    flex-wrap: wrap;
+  }
+}
+
+/* ==================== Print Styles ==================== */
+@media print {
+  .navbar,
+  .back-to-top,
+  .scroll-indicator {
+    display: none !important;
+  }
+
+  .hero {
+    min-height: auto;
+    padding: var(--space-8);
+  }
+
+  .section {
+    padding: var(--space-8) 0;
+    page-break-inside: avoid;
+  }
+}
