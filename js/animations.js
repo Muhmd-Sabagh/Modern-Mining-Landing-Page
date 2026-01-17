@@ -57,12 +57,15 @@
     });
 
     // Hero Content Animation
+    // Set initial state first, then animate
+    gsap.set(".hero-content", { opacity: 1, y: 0 }); // Ensure visible as fallback
     gsap.from(".hero-content", {
       y: 50,
       opacity: 0,
       duration: 1.2,
       ease: "power3.out",
       delay: 0.3,
+      immediateRender: false, // Don't apply initial values until animation starts
     });
 
     // Hero Badge Animation
@@ -164,6 +167,10 @@
     gsap.set(".news-card", { opacity: 0, x: 50 });
 
     // Contact Section Animation
+    // Set initial states as fallback
+    gsap.set(".contact-info", { opacity: 1, x: 0 });
+    gsap.set(".contact-form-wrapper", { opacity: 1, x: 0 });
+
     gsap.from(".contact-info", {
       x: -50,
       opacity: 0,
@@ -173,6 +180,7 @@
         trigger: ".contact-wrapper",
         start: "top 75%",
       },
+      immediateRender: false,
     });
 
     gsap.from(".contact-form-wrapper", {
@@ -184,6 +192,7 @@
         trigger: ".contact-wrapper",
         start: "top 75%",
       },
+      immediateRender: false,
     });
 
     // Footer Animation
@@ -419,6 +428,81 @@
     });
   }
 
+  /* ==================== Safety Fallback ==================== */
+  function ensureElementsVisible() {
+    // Ensure hero content is visible if AOS/GSAP haven't initialized
+    const heroContent = document.querySelector(".hero-content");
+    const contactForm = document.querySelector(".contact-form-wrapper");
+    const contactInfo = document.querySelector(".contact-info");
+
+    if (heroContent) {
+      // Check if element is hidden by AOS
+      const isAOSInit = heroContent.classList.contains("aos-init");
+      const isAOSAnimate = heroContent.classList.contains("aos-animate");
+
+      if (!isAOSInit || (isAOSInit && !isAOSAnimate && window.scrollY === 0)) {
+        // If at top of page and not animated yet, ensure visible
+        setTimeout(() => {
+          if (
+            heroContent.style.opacity === "" ||
+            heroContent.style.opacity === "0"
+          ) {
+            heroContent.style.opacity = "1";
+            heroContent.style.visibility = "visible";
+          }
+        }, 100);
+      }
+    }
+
+    // Same for contact form
+    if (contactForm) {
+      const isAOSInit = contactForm.classList.contains("aos-init");
+      if (!isAOSInit) {
+        setTimeout(() => {
+          if (
+            contactForm.style.opacity === "" ||
+            contactForm.style.opacity === "0"
+          ) {
+            contactForm.style.opacity = "1";
+            contactForm.style.visibility = "visible";
+          }
+        }, 200);
+      }
+    }
+
+    if (contactInfo) {
+      const isAOSInit = contactInfo.classList.contains("aos-init");
+      if (!isAOSInit) {
+        setTimeout(() => {
+          if (
+            contactInfo.style.opacity === "" ||
+            contactInfo.style.opacity === "0"
+          ) {
+            contactInfo.style.opacity = "1";
+            contactInfo.style.visibility = "visible";
+          }
+        }, 200);
+      }
+    }
+
+    // Ensure section headers are visible
+    const sectionHeaders = document.querySelectorAll(".section-header[data-aos]");
+    sectionHeaders.forEach((header) => {
+      const isAOSInit = header.classList.contains("aos-init");
+      if (!isAOSInit) {
+        setTimeout(() => {
+          if (
+            header.style.opacity === "" ||
+            header.style.opacity === "0"
+          ) {
+            header.style.opacity = "1";
+            header.style.visibility = "visible";
+          }
+        }, 100);
+      }
+    });
+  }
+
   /* ==================== Initialize All Animations ==================== */
   function init() {
     // Wait for page to load completely
@@ -429,6 +513,13 @@
     initHoverEffects();
     initScrollProgress();
     initParallax();
+
+    // Safety check to ensure elements are visible
+    ensureElementsVisible();
+
+    // Double-check after a delay
+    setTimeout(ensureElementsVisible, 500);
+    setTimeout(ensureElementsVisible, 1000);
 
     console.log("All Animations Initialized");
   }

@@ -16,6 +16,7 @@
 
   /* ==================== Navbar Scroll Effect ==================== */
   function handleNavbarScroll() {
+    if (!navbar) return;
     if (window.scrollY > 50) {
       navbar.classList.add("scrolled");
     } else {
@@ -49,12 +50,14 @@
 
   /* ==================== Mobile Menu Toggle ==================== */
   function toggleMobileMenu() {
+    if (!navbarToggler || !navbarNav) return;
     navbarToggler.classList.toggle("active");
     navbarNav.classList.toggle("active");
     document.body.classList.toggle("menu-open");
   }
 
   function closeMobileMenu() {
+    if (!navbarToggler || !navbarNav) return;
     navbarToggler.classList.remove("active");
     navbarNav.classList.remove("active");
     document.body.classList.remove("menu-open");
@@ -313,8 +316,10 @@
     // Close mobile menu when clicking outside
     document.addEventListener("click", (e) => {
       if (
+        navbarNav &&
         navbarNav.classList.contains("active") &&
         !navbarNav.contains(e.target) &&
+        navbarToggler &&
         !navbarToggler.contains(e.target)
       ) {
         closeMobileMenu();
