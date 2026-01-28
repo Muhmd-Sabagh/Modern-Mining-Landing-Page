@@ -5,13 +5,14 @@
 
 :root {
   /* ==================== Primary Colors ==================== */
-  /* Industrial color palette with dark tones and gold accents */
-  --primary-dark: #1a2332; /* Deep navy - main dark */
-  --primary-blue: #0d4f8b; /* Industrial blue */
-  --primary-light: #2c5282; /* Lighter blue accent */
-  --accent-gold: #c9a227; /* Gold accent - premium feel */
-  --accent-gold-light: #e6c547; /* Light gold for hover */
-  --accent-cyan: #38b2ac; /* Cyan accent - modern tech */
+  /* Logo colors: Primary Navy #18214e, Secondary Cyan #279FD3 */
+  --primary-dark: #18214e; /* Logo primary - Deep navy */
+  --primary-blue: #279fd3; /* Logo secondary - Cyan blue */
+  --primary-light: #3ab8e8; /* Lighter cyan accent */
+  /* Gold colors removed - using primary colors instead */
+  /* --accent-gold: #c9a227; */
+  /* --accent-gold-light: #e6c547; */
+  --accent-cyan: #279fd3; /* Same as primary-blue for consistency */
 
   /* ==================== Neutral Colors ==================== */
   --neutral-white: #ffffff;
@@ -36,7 +37,7 @@
   --success: #38a169;
   --warning: #dd6b20;
   --error: #e53e3e;
-  --info: #3182ce;
+  --info: #279fd3;
 
   /* ==================== Gradients ==================== */
   --gradient-primary: linear-gradient(
@@ -44,20 +45,26 @@
     var(--primary-dark) 0%,
     var(--primary-blue) 100%
   );
-  --gradient-gold: linear-gradient(
+  /* Gold gradient removed - using primary/blue gradient instead */
+  --gradient-secondary: linear-gradient(
     135deg,
-    var(--accent-gold) 0%,
-    var(--accent-gold-light) 100%
+    var(--primary-dark) 0%,
+    var(--primary-blue) 100%
+  );
+  --gradient-blue: linear-gradient(
+    135deg,
+    var(--primary-blue) 0%,
+    var(--primary-light) 100%
   );
   --gradient-hero: linear-gradient(
     135deg,
-    rgba(26, 35, 50, 0.95) 0%,
-    rgba(13, 79, 139, 0.9) 100%
+    rgba(24, 33, 78, 0.6) 0%,
+    rgba(39, 159, 211, 0.2) 100%
   );
   --gradient-overlay: linear-gradient(
     180deg,
-    rgba(26, 35, 50, 0.7) 0%,
-    rgba(26, 35, 50, 0.9) 100%
+    rgba(24, 33, 78, 0.7) 0%,
+    rgba(24, 33, 78, 0.9) 100%
   );
   --gradient-card: linear-gradient(
     180deg,
@@ -135,15 +142,16 @@
 
   /* ==================== Shadows ==================== */
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
-    0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
-    0 4px 6px -2px rgba(0, 0, 0, 0.05);
-  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
-    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --shadow-md:
+    0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg:
+    0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-xl:
+    0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
   --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
   --shadow-inner: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
-  --shadow-gold: 0 4px 14px 0 rgba(201, 162, 39, 0.39);
+  /* Shadow gold removed - using shadow-primary instead */
+  --shadow-primary: 0 4px 14px 0 rgba(24, 33, 78, 0.39);
   --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.08);
   --shadow-card-hover: 0 12px 40px rgba(0, 0, 0, 0.15);
 

@@ -17,17 +17,21 @@
         delay: 0,
         anchorPlacement: "top-bottom",
         disable: function () {
-          // Disable on mobile for better performance
+          // Disable on mobile (< 768px) or if user prefers reduced motion
           return (
-            window.innerWidth < 768 &&
+            window.innerWidth < 768 ||
             window.matchMedia("(prefers-reduced-motion: reduce)").matches
           );
         },
       });
 
       // Refresh AOS on window resize
+      let resizeTimer;
       window.addEventListener("resize", function () {
-        AOS.refresh();
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(function () {
+          AOS.refresh();
+        }, 250);
       });
 
       console.log("AOS Initialized");
@@ -41,12 +45,17 @@
       return;
     }
 
+    // Skip GSAP animations on mobile for better performance
+    if (window.innerWidth < 768) {
+      console.log("GSAP animations disabled on mobile");
+      return;
+    }
+
     // Register ScrollTrigger plugin
     gsap.registerPlugin(ScrollTrigger);
 
     // Hero Section Parallax
     gsap.to(".hero-bg img", {
-      yPercent: 30,
       ease: "none",
       scrollTrigger: {
         trigger: ".hero",
@@ -86,23 +95,10 @@
       ease: "power2.out",
       scrollTrigger: {
         trigger: ".hero-stats",
-        start: "top 80%",
       },
     });
 
-    // Section Headers Animation
-    gsap.utils.toArray(".section-header").forEach((header) => {
-      gsap.from(header, {
-        y: 40,
-        opacity: 0,
-        duration: 0.8,
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: header,
-          start: "top 85%",
-        },
-      });
-    });
+    // Section Headers - handled by AOS, no GSAP animation needed
 
     // Product Cards Stagger Animation
     ScrollTrigger.batch(".product-card", {
@@ -263,7 +259,7 @@
   /* ==================== Intersection Observer Animations ==================== */
   function initIntersectionObserver() {
     const animatedElements = document.querySelectorAll(
-      ".fade-in, .fade-in-up, .fade-in-down, .fade-in-left, .fade-in-right, .scale-in, .stagger-item"
+      ".fade-in, .fade-in-up, .fade-in-down, .fade-in-left, .fade-in-right, .scale-in, .stagger-item",
     );
 
     if (animatedElements.length === 0) return;
@@ -305,7 +301,7 @@
           }
         });
       },
-      { threshold: 0.3 }
+      { threshold: 0.3 },
     );
 
     revealElements.forEach((element) => {
@@ -393,12 +389,12 @@
     progressBar.style.cssText = `
       position: fixed;
       top: 0;
-      left: 0;
-      width: 0%;
+      right: 0;
+      width: 0;
       height: 3px;
-      background: linear-gradient(135deg, #c9a227 0%, #e6c547 100%);
-      z-index: 9999;
+      background: var(--gradient-primary);
       transition: width 0.1s ease;
+      z-index: var(--z-fixed);
     `;
     document.body.appendChild(progressBar);
 
@@ -486,15 +482,14 @@
     }
 
     // Ensure section headers are visible
-    const sectionHeaders = document.querySelectorAll(".section-header[data-aos]");
+    const sectionHeaders = document.querySelectorAll(
+      ".section-header[data-aos]",
+    );
     sectionHeaders.forEach((header) => {
       const isAOSInit = header.classList.contains("aos-init");
       if (!isAOSInit) {
         setTimeout(() => {
-          if (
-            header.style.opacity === "" ||
-            header.style.opacity === "0"
-          ) {
+          if (header.style.opacity === "" || header.style.opacity === "0") {
             header.style.opacity = "1";
             header.style.visibility = "visible";
           }

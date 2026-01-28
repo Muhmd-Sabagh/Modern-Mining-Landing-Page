@@ -11,6 +11,7 @@
   const navbarToggler = document.getElementById("navbarToggler");
   const navbarNav = document.getElementById("navbarNav");
   const navLinks = document.querySelectorAll(".nav-link");
+  const floatBtns = document.querySelectorAll(".float-btn");
   const backToTop = document.getElementById("backToTop");
   const contactForm = document.getElementById("contactForm");
 
@@ -84,11 +85,11 @@
   }
 
   /* ==================== Back to Top ==================== */
-  function handleBackToTop() {
+  function handleFloatBtns() {
     if (window.scrollY > 500) {
-      backToTop.classList.add("visible");
+      floatBtns.forEach((fb) => fb.classList.add("visible"));
     } else {
-      backToTop.classList.remove("visible");
+      floatBtns.forEach((fb) => fb.classList.remove("visible"));
     }
   }
 
@@ -276,7 +277,7 @@
             }
           });
         },
-        { threshold: 0.5 }
+        { threshold: 0.5 },
       );
 
       observer.observe(counter);
@@ -300,7 +301,7 @@
     window.addEventListener("scroll", () => {
       handleNavbarScroll();
       setActiveNavLink();
-      handleBackToTop();
+      handleFloatBtns();
     });
 
     // Mobile menu toggle
@@ -345,7 +346,7 @@
     // Initial calls
     handleNavbarScroll();
     setActiveNavLink();
-    handleBackToTop();
+    handleFloatBtns();
 
     // Log initialization
     console.log("Modern Mining - Scripts Initialized");

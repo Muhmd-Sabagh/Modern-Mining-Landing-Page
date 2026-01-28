@@ -42,7 +42,7 @@ html[lang="en"] body {
 /* ==================== Vision Mission Cards LTR ==================== */
 [dir="ltr"] .vm-card {
   border-right: none;
-  border-left: 4px solid var(--accent-gold);
+  border-left: 4px solid var(--primary-dark);
 }
 
 /* ==================== News Card Date LTR ==================== */

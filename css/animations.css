@@ -7,7 +7,9 @@
 .fade-in {
   opacity: 0;
   transform: translateY(30px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease;
 }
 
 .fade-in.visible {
@@ -18,7 +20,9 @@
 .fade-in-up {
   opacity: 0;
   transform: translateY(50px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease;
 }
 
 .fade-in-up.visible {
@@ -29,7 +33,9 @@
 .fade-in-down {
   opacity: 0;
   transform: translateY(-50px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease;
 }
 
 .fade-in-down.visible {
@@ -40,7 +46,9 @@
 .fade-in-right {
   opacity: 0;
   transform: translateX(-50px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease;
 }
 
 .fade-in-right.visible {
@@ -51,7 +59,9 @@
 .fade-in-left {
   opacity: 0;
   transform: translateX(50px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease;
 }
 
 .fade-in-left.visible {
@@ -63,7 +73,9 @@
 .scale-in {
   opacity: 0;
   transform: scale(0.9);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease;
 }
 
 .scale-in.visible {
@@ -75,7 +87,9 @@
 .stagger-item {
   opacity: 0;
   transform: translateY(30px);
-  transition: opacity 0.5s ease, transform 0.5s ease;
+  transition:
+    opacity 0.5s ease,
+    transform 0.5s ease;
 }
 
 .stagger-item.visible {
@@ -112,7 +126,9 @@
 .slide-in-right {
   opacity: 0;
   transform: translateX(-100px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s ease;
 }
 
 .slide-in-right.visible {
@@ -123,7 +139,9 @@
 .slide-in-left {
   opacity: 0;
   transform: translateX(100px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s ease;
 }
 
 .slide-in-left.visible {
@@ -141,7 +159,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: var(--accent-gold);
+  background: var(--primary-dark);
   transform: scaleX(1);
   transform-origin: right;
   transition: transform 0.8s cubic-bezier(0.77, 0, 0.175, 1);
@@ -224,7 +242,8 @@
     box-shadow: 0 0 5px rgba(201, 162, 39, 0.5);
   }
   50% {
-    box-shadow: 0 0 20px rgba(201, 162, 39, 0.8),
+    box-shadow:
+      0 0 20px rgba(201, 162, 39, 0.8),
       0 0 30px rgba(201, 162, 39, 0.6);
   }
 }
@@ -263,15 +282,17 @@
     border-color: transparent;
   }
   50% {
-    border-color: var(--accent-gold);
+    border-color: var(--primary-dark);
   }
 }
 
 .typewriter {
   overflow: hidden;
-  border-left: 3px solid var(--accent-gold);
+  border-left: 3px solid var(--primary-dark);
   white-space: nowrap;
-  animation: typewriter 3s steps(40, end), blink-caret 0.75s step-end infinite;
+  animation:
+    typewriter 3s steps(40, end),
+    blink-caret 0.75s step-end infinite;
 }
 
 /* ==================== Parallax Effect ==================== */
@@ -284,7 +305,8 @@
 
 /* ==================== Hover Animations ==================== */
 .hover-lift {
-  transition: transform var(--transition-base),
+  transition:
+    transform var(--transition-base),
     box-shadow var(--transition-base);
 }
 
@@ -382,7 +404,7 @@
   width: 40px;
   height: 40px;
   border: 3px solid var(--neutral-300);
-  border-top-color: var(--accent-gold);
+  border-top-color: var(--primary-dark);
   border-radius: 50%;
   animation: spin 0.8s linear infinite;
 }

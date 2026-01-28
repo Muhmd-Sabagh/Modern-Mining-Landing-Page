@@ -15,11 +15,11 @@
     <!-- Open Graph / Social Media -->
     <meta property="og:title" content="Modern Mining | من قلب الأرض .. نصنع الجودة" />
     <meta property="og:description" content="المؤسسة الحديثة لتوريد خامات المحاجر والمناجم - خبرة تمتد لسنوات في تعدين وتوريد أجود الخامات المعدنية" />
-    <meta property="og:image" content="assets/images/modern_mining_logo.png" />
+    <meta property="og:image" content="assets/images/logo/modern_mining_logo.png" />
     <meta property="og:type" content="website" />
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="assets/images/modern_mining_logo.png" />
+    <link rel="icon" type="image/png" href="assets/images/logo/modern_mining_logo.png" />
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css" />
@@ -44,7 +44,7 @@
         <div class="d-flex justify-content-between align-items-center w-100">
           <!-- Logo -->
           <a href="#home" class="navbar-brand">
-            <img src="assets/images/modern_mining_logo.png" alt="Modern Mining Logo" class="navbar-logo" />
+            <img src="assets/images/logo/modern_mining_logo.png" alt="Modern Mining Logo" class="navbar-logo" />
           </a>
 
           <!-- Navigation Links -->
@@ -56,10 +56,10 @@
               <a href="#about" class="nav-link" data-ar="من نحن" data-en="About Us">من نحن</a>
             </li>
             <li class="nav-item">
-              <a href="#board" class="nav-link" data-ar="مجلس الإدارة" data-en="Board">مجلس الإدارة</a>
+              <a href="#products" class="nav-link" data-ar="منتجاتنا" data-en="Products">منتجاتنا</a>
             </li>
             <li class="nav-item">
-              <a href="#products" class="nav-link" data-ar="منتجاتنا" data-en="Products">منتجاتنا</a>
+              <a href="#partners" class="nav-link" data-ar="شركاؤنا" data-en="Partners">شركاؤنا</a>
             </li>
             <li class="nav-item">
               <a href="#news" class="nav-link" data-ar="آخر الأخبار" data-en="News">آخر الأخبار</a>
@@ -89,17 +89,38 @@
 
     <!-- ================= Header / Hero ================= -->
     <section class="hero" id="home">
-      <!-- Background Image -->
+      <!-- Background Image Carousel -->
       <div class="hero-bg">
-        <img src="https://images.unsplash.com/photo-1578319439584-104c94d37305?w=1920&q=80" alt="Mining Background" />
+        <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="assets/images/hero/hero-2.jpeg" alt="Mining Background" />
+            </div>
+            <div class="carousel-item">
+              <img src="assets/images/hero/hero-3.jpeg" alt="Mining Operations" />
+            </div>
+            <div class="carousel-item">
+              <img src="assets/images/hero/hero-4.jpeg" alt="Mineral Processing" />
+            </div>
+            <div class="carousel-item">
+              <img src="assets/images/hero/hero-5.jpeg" alt="Mining Site" />
+            </div>
+            <div class="carousel-item">
+              <img src="assets/images/hero/hero-6.jpeg" alt="Mining Equipment" />
+            </div>
+            <div class="carousel-item">
+              <img src="assets/images/hero/hero-7.jpeg" alt="Mining Products" />
+            </div>
+          </div>
+        </div>
       </div>
       
       <!-- Overlay -->
       <div class="hero-overlay"></div>
       
       <!-- Hero Content -->
-      <div class="container">
-        <div class="hero-content" data-aos="fade-up" data-aos-duration="1000">
+      <div class="container d-flex flex-column align-items-center justify-content-center">
+        <div class="hero-content d-flex flex-column align-items-center justify-content-center text-center" data-aos="fade-up" data-aos-duration="1000">
           <!-- Badge -->
           <div class="hero-badge">
             <i class="bi bi-gem"></i>
@@ -109,8 +130,7 @@
           <!-- Main Title -->
           <h1 class="hero-title">
             <span data-ar="من قلب الأرض..." data-en="From the Heart of the Earth...">من قلب الأرض...</span>
-            <br />
-            <span class="text-gold" data-ar="نصنع الجودة" data-en="We Craft Quality">نصنع الجودة</span>
+            <span class="text-accent" data-ar="نصنع الجودة" data-en="We Craft Quality">نصنع الجودة</span>
           </h1>
           
           <!-- Subtitle -->
@@ -162,10 +182,16 @@
     <!-- ================= About Us ================= -->
     <section class="about section" id="about">
       <div class="container">
+        <!-- Section Header -->
+        <div class="section-header" data-aos="fade-up">
+          <h2 class="section-title" data-ar="من نحن" data-en="About Us">من <span>نحن</span></h2>
+          <p class="section-subtitle" data-ar="إرث من الخبرة والتزام بالجودة" data-en="A Legacy of Experience and Commitment to Quality">إرث من الخبرة والتزام بالجودة</p>
+        </div>
+        
         <div class="about-content">
           <!-- About Image -->
           <div class="about-image" data-aos="fade-left" data-aos-duration="800">
-            <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&q=80" alt="Mining Operations" />
+            <img src="assets/images/about/about-1.jpeg" alt="Mining Operations" />
             <div class="about-image-badge">
               <span class="about-image-badge-value">15+</span>
               <span class="about-image-badge-label" data-ar="سنة من التميز" data-en="Years of Excellence">سنة من التميز</span>
@@ -174,10 +200,6 @@
           
           <!-- About Text -->
           <div class="about-text" data-aos="fade-right" data-aos-duration="800">
-            <div class="section-header text-start">
-              <h2 class="section-title" data-ar="من نحن" data-en="About Us">من <span>نحن</span></h2>
-              <p class="section-subtitle mx-0" data-ar="إرث من الخبرة والتزام بالجودة" data-en="A Legacy of Experience and Commitment to Quality">إرث من الخبرة والتزام بالجودة</p>
-            </div>
             
             <p data-ar="تأسست المؤسسة الحديثة لتوريد خامات المحاجر والمناجم (Modern Mining) لتكون في طليعة شركات التعدين في المنطقة. نحن متخصصون في استخراج وتصنيع وتوريد أجود الخامات المعدنية التي تلبي أعلى المعايير الصناعية." data-en="Modern Mining was established to be at the forefront of mining companies in the region. We specialize in extracting, manufacturing, and supplying the finest mineral raw materials that meet the highest industrial standards.">
               تأسست المؤسسة الحديثة لتوريد خامات المحاجر والمناجم (Modern Mining) لتكون في طليعة شركات التعدين في المنطقة. نحن متخصصون في استخراج وتصنيع وتوريد أجود الخامات المعدنية التي تلبي أعلى المعايير الصناعية.
@@ -253,64 +275,6 @@
       </div>
     </section>
 
-    <!-- ================= Board of Directors ================= -->
-    <section class="board section" id="board">
-      <div class="container">
-        <!-- Section Header -->
-        <div class="section-header" data-aos="fade-up">
-          <h2 class="section-title" data-ar="مجلس الإدارة" data-en="Board of Directors">مجلس الإدارة</h2>
-          <p class="section-subtitle" data-ar="القيادة التي تقود مسيرتنا نحو النجاح" data-en="The leadership driving our journey to success">القيادة التي تقود مسيرتنا نحو النجاح</p>
-        </div>
-        
-        <!-- Board Grid -->
-        <div class="board-grid">
-          <!-- Member 1 -->
-          <div class="board-card stagger-item" data-aos="fade-up" data-aos-delay="100">
-            <div class="board-card-image">
-              <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&q=80" alt="Board Member" />
-            </div>
-            <div class="board-card-content">
-              <h4 data-ar="أحمد محمد" data-en="Ahmed Mohamed">أحمد محمد</h4>
-              <p data-ar="رئيس مجلس الإدارة" data-en="Chairman">رئيس مجلس الإدارة</p>
-            </div>
-          </div>
-          
-          <!-- Member 2 -->
-          <div class="board-card stagger-item" data-aos="fade-up" data-aos-delay="200">
-            <div class="board-card-image">
-              <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&q=80" alt="Board Member" />
-            </div>
-            <div class="board-card-content">
-              <h4 data-ar="محمود علي" data-en="Mahmoud Ali">محمود علي</h4>
-              <p data-ar="نائب رئيس مجلس الإدارة" data-en="Vice Chairman">نائب رئيس مجلس الإدارة</p>
-            </div>
-          </div>
-          
-          <!-- Member 3 -->
-          <div class="board-card stagger-item" data-aos="fade-up" data-aos-delay="300">
-            <div class="board-card-image">
-              <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&q=80" alt="Board Member" />
-            </div>
-            <div class="board-card-content">
-              <h4 data-ar="خالد إبراهيم" data-en="Khaled Ibrahim">خالد إبراهيم</h4>
-              <p data-ar="المدير العام" data-en="General Manager">المدير العام</p>
-            </div>
-          </div>
-          
-          <!-- Member 4 -->
-          <div class="board-card stagger-item" data-aos="fade-up" data-aos-delay="400">
-            <div class="board-card-image">
-              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80" alt="Board Member" />
-            </div>
-            <div class="board-card-content">
-              <h4 data-ar="عمر حسن" data-en="Omar Hassan">عمر حسن</h4>
-              <p data-ar="المدير المالي" data-en="Financial Director">المدير المالي</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- ================= Products ================= -->
     <section class="products section" id="products">
       <div class="container">
@@ -321,132 +285,148 @@
         </div>
         
         <!-- Products Grid -->
-        <div class="products-grid">
+        <div class="products-grid row g-4">
           <!-- Product 1: Alumina Balls -->
-          <div class="product-card stagger-item" data-aos="fade-up" data-aos-delay="100">
-            <div class="product-card-image">
-              <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80" alt="Alumina Balls" />
-              <div class="product-card-overlay"></div>
-            </div>
-            <div class="product-card-content">
-              <h4 data-ar="كرات طحن ألومينا" data-en="Alumina Grinding Balls">كرات طحن ألومينا</h4>
-              <p data-ar="كرات طحن عالية الكثافة مصنوعة من أكسيد الألومنيوم، تستخدم في طحن المواد الخام في صناعات السيراميك والزجاج والدهانات." data-en="High-density grinding balls made from aluminum oxide, used for grinding raw materials in ceramics, glass, and paint industries.">كرات طحن عالية الكثافة مصنوعة من أكسيد الألومنيوم، تستخدم في طحن المواد الخام في صناعات السيراميك والزجاج والدهانات.</p>
-              <a href="#contact" class="product-card-link">
-                <span data-ar="طلب عرض سعر" data-en="Request Quote">طلب عرض سعر</span>
-                <i class="bi bi-arrow-left"></i>
-              </a>
+          <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+            <div class="product-card stagger-item h-100" data-aos="fade-up" data-aos-delay="100">
+              <div class="product-card-image">
+                <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80" alt="Alumina Balls" />
+                <div class="product-card-overlay"></div>
+              </div>
+              <div class="product-card-content">
+                <h4 data-ar="كرات طحن ألومينا" data-en="Alumina Grinding Balls">كرات طحن ألومينا</h4>
+                <p data-ar="كرات طحن عالية الكثافة مصنوعة من أكسيد الألومنيوم، تستخدم في طحن المواد الخام في صناعات السيراميك والزجاج والدهانات." data-en="High-density grinding balls made from aluminum oxide, used for grinding raw materials in ceramics, glass, and paint industries.">كرات طحن عالية الكثافة مصنوعة من أكسيد الألومنيوم، تستخدم في طحن المواد الخام في صناعات السيراميك والزجاج والدهانات.</p>
+                <a href="#contact" class="product-card-link">
+                  <span data-ar="طلب عرض سعر" data-en="Request Quote">طلب عرض سعر</span>
+                  <i class="bi bi-arrow-left"></i>
+                </a>
+              </div>
             </div>
           </div>
           
           <!-- Product 2: Feldspar -->
-          <div class="product-card stagger-item" data-aos="fade-up" data-aos-delay="150">
-            <div class="product-card-image">
-              <img src="https://images.unsplash.com/photo-1612355850073-7106cb11cef7?w=600&q=80" alt="Feldspar" />
-              <div class="product-card-overlay"></div>
-            </div>
-            <div class="product-card-content">
-              <h4 data-ar="فلسبار" data-en="Feldspar">فلسبار</h4>
-              <p data-ar="خام حيوي في صناعة الزجاج والسيراميك، يساهم في خفض درجة حرارة الانصهار وتحسين جودة المنتج النهائي." data-en="A vital raw material in glass and ceramics manufacturing, helps lower melting temperature and improves final product quality.">خام حيوي في صناعة الزجاج والسيراميك، يساهم في خفض درجة حرارة الانصهار وتحسين جودة المنتج النهائي.</p>
-              <a href="#contact" class="product-card-link">
-                <span data-ar="طلب عرض سعر" data-en="Request Quote">طلب عرض سعر</span>
-                <i class="bi bi-arrow-left"></i>
-              </a>
+          <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+            <div class="product-card stagger-item h-100" data-aos="fade-up" data-aos-delay="150">
+              <div class="product-card-image">
+                <img src="https://images.unsplash.com/photo-1612355850073-7106cb11cef7?w=600&q=80" alt="Feldspar" />
+                <div class="product-card-overlay"></div>
+              </div>
+              <div class="product-card-content">
+                <h4 data-ar="فلسبار" data-en="Feldspar">فلسبار</h4>
+                <p data-ar="خام حيوي في صناعة الزجاج والسيراميك، يساهم في خفض درجة حرارة الانصهار وتحسين جودة المنتج النهائي." data-en="A vital raw material in glass and ceramics manufacturing, helps lower melting temperature and improves final product quality.">خام حيوي في صناعة الزجاج والسيراميك، يساهم في خفض درجة حرارة الانصهار وتحسين جودة المنتج النهائي.</p>
+                <a href="#contact" class="product-card-link">
+                  <span data-ar="طلب عرض سعر" data-en="Request Quote">طلب عرض سعر</span>
+                  <i class="bi bi-arrow-left"></i>
+                </a>
+              </div>
             </div>
           </div>
           
           <!-- Product 3: Silica Flour -->
-          <div class="product-card stagger-item" data-aos="fade-up" data-aos-delay="200">
-            <div class="product-card-image">
-              <img src="https://images.unsplash.com/photo-1518173946687-a4c036bc6f77?w=600&q=80" alt="Silica Flour" />
-              <div class="product-card-overlay"></div>
-            </div>
-            <div class="product-card-content">
-              <h4 data-ar="رمل زجاجي مطحون" data-en="Silica Flour">رمل زجاجي مطحون</h4>
-              <p data-ar="رمل السيليكا المطحون بدقة عالية، يستخدم في صناعة الفيبرجلاس والمواد العازلة والدهانات والطلاءات." data-en="Finely ground silica sand, used in fiberglass manufacturing, insulation materials, paints, and coatings.">رمل السيليكا المطحون بدقة عالية، يستخدم في صناعة الفيبرجلاس والمواد العازلة والدهانات والطلاءات.</p>
-              <a href="#contact" class="product-card-link">
-                <span data-ar="طلب عرض سعر" data-en="Request Quote">طلب عرض سعر</span>
-                <i class="bi bi-arrow-left"></i>
-              </a>
+          <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+            <div class="product-card stagger-item h-100" data-aos="fade-up" data-aos-delay="200">
+              <div class="product-card-image">
+                <img src="https://images.unsplash.com/photo-1518173946687-a4c036bc6f77?w=600&q=80" alt="Silica Flour" />
+                <div class="product-card-overlay"></div>
+              </div>
+              <div class="product-card-content">
+                <h4 data-ar="رمل زجاجي مطحون" data-en="Silica Flour">رمل زجاجي مطحون</h4>
+                <p data-ar="رمل السيليكا المطحون بدقة عالية، يستخدم في صناعة الفيبرجلاس والمواد العازلة والدهانات والطلاءات." data-en="Finely ground silica sand, used in fiberglass manufacturing, insulation materials, paints, and coatings.">رمل السيليكا المطحون بدقة عالية، يستخدم في صناعة الفيبرجلاس والمواد العازلة والدهانات والطلاءات.</p>
+                <a href="#contact" class="product-card-link">
+                  <span data-ar="طلب عرض سعر" data-en="Request Quote">طلب عرض سعر</span>
+                  <i class="bi bi-arrow-left"></i>
+                </a>
+              </div>
             </div>
           </div>
           
           <!-- Product 4: Silica Sand -->
-          <div class="product-card stagger-item" data-aos="fade-up" data-aos-delay="250">
-            <div class="product-card-image">
-              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80" alt="Silica Sand" />
-              <div class="product-card-overlay"></div>
-            </div>
-            <div class="product-card-content">
-              <h4 data-ar="رمل زجاجي" data-en="Silica Sand">رمل زجاجي</h4>
-              <p data-ar="رمل سيليكا عالي النقاء يستخدم في صناعة الزجاج بأنواعه، البصريات، والصناعات الإلكترونية." data-en="High-purity silica sand used in glass manufacturing, optics, and electronic industries.">رمل سيليكا عالي النقاء يستخدم في صناعة الزجاج بأنواعه، البصريات، والصناعات الإلكترونية.</p>
-              <a href="#contact" class="product-card-link">
-                <span data-ar="طلب عرض سعر" data-en="Request Quote">طلب عرض سعر</span>
-                <i class="bi bi-arrow-left"></i>
-              </a>
+          <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+            <div class="product-card stagger-item h-100" data-aos="fade-up" data-aos-delay="250">
+              <div class="product-card-image">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80" alt="Silica Sand" />
+                <div class="product-card-overlay"></div>
+              </div>
+              <div class="product-card-content">
+                <h4 data-ar="رمل زجاجي" data-en="Silica Sand">رمل زجاجي</h4>
+                <p data-ar="رمل سيليكا عالي النقاء يستخدم في صناعة الزجاج بأنواعه، البصريات، والصناعات الإلكترونية." data-en="High-purity silica sand used in glass manufacturing, optics, and electronic industries.">رمل سيليكا عالي النقاء يستخدم في صناعة الزجاج بأنواعه، البصريات، والصناعات الإلكترونية.</p>
+                <a href="#contact" class="product-card-link">
+                  <span data-ar="طلب عرض سعر" data-en="Request Quote">طلب عرض سعر</span>
+                  <i class="bi bi-arrow-left"></i>
+                </a>
+              </div>
             </div>
           </div>
           
           <!-- Product 5: Feldspar Powder -->
-          <div class="product-card stagger-item" data-aos="fade-up" data-aos-delay="300">
-            <div class="product-card-image">
-              <img src="https://images.unsplash.com/photo-1530982011887-3cc11cc85693?w=600&q=80" alt="Feldspar Powder" />
-              <div class="product-card-overlay"></div>
-            </div>
-            <div class="product-card-content">
-              <h4 data-ar="فلسبار مطحون" data-en="Feldspar Powder">فلسبار مطحون</h4>
-              <p data-ar="فلسبار مطحون بدرجات نعومة مختلفة حسب متطلبات الاستخدام في صناعات السيراميك والبورسلين والجليز." data-en="Ground feldspar in various fineness grades according to usage requirements in ceramics, porcelain, and glaze industries.">فلسبار مطحون بدرجات نعومة مختلفة حسب متطلبات الاستخدام في صناعات السيراميك والبورسلين والجليز.</p>
-              <a href="#contact" class="product-card-link">
-                <span data-ar="طلب عرض سعر" data-en="Request Quote">طلب عرض سعر</span>
-                <i class="bi bi-arrow-left"></i>
-              </a>
+          <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+            <div class="product-card stagger-item h-100" data-aos="fade-up" data-aos-delay="300">
+              <div class="product-card-image">
+                <img src="https://images.unsplash.com/photo-1530982011887-3cc11cc85693?w=600&q=80" alt="Feldspar Powder" />
+                <div class="product-card-overlay"></div>
+              </div>
+              <div class="product-card-content">
+                <h4 data-ar="فلسبار مطحون" data-en="Feldspar Powder">فلسبار مطحون</h4>
+                <p data-ar="فلسبار مطحون بدرجات نعومة مختلفة حسب متطلبات الاستخدام في صناعات السيراميك والبورسلين والجليز." data-en="Ground feldspar in various fineness grades according to usage requirements in ceramics, porcelain, and glaze industries.">فلسبار مطحون بدرجات نعومة مختلفة حسب متطلبات الاستخدام في صناعات السيراميك والبورسلين والجليز.</p>
+                <a href="#contact" class="product-card-link">
+                  <span data-ar="طلب عرض سعر" data-en="Request Quote">طلب عرض سعر</span>
+                  <i class="bi bi-arrow-left"></i>
+                </a>
+              </div>
             </div>
           </div>
           
           <!-- Product 6: Glass Powder -->
-          <div class="product-card stagger-item" data-aos="fade-up" data-aos-delay="350">
-            <div class="product-card-image">
-              <img src="https://images.unsplash.com/photo-1584568694244-14fbdf83bd30?w=600&q=80" alt="Glass Powder" />
-              <div class="product-card-overlay"></div>
-            </div>
-            <div class="product-card-content">
-              <h4 data-ar="زجاج مطحون" data-en="Glass Powder">زجاج مطحون</h4>
-              <p data-ar="زجاج معاد تدويره ومطحون يستخدم في صناعة السيراميك والبلاط كمادة صهر ولإضافة اللمعان للمنتجات." data-en="Recycled and ground glass used in ceramics and tile manufacturing as a flux and to add shine to products.">زجاج معاد تدويره ومطحون يستخدم في صناعة السيراميك والبلاط كمادة صهر ولإضافة اللمعان للمنتجات.</p>
-              <a href="#contact" class="product-card-link">
-                <span data-ar="طلب عرض سعر" data-en="Request Quote">طلب عرض سعر</span>
-                <i class="bi bi-arrow-left"></i>
-              </a>
+          <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+            <div class="product-card stagger-item h-100" data-aos="fade-up" data-aos-delay="350">
+              <div class="product-card-image">
+                <img src="https://images.unsplash.com/photo-1584568694244-14fbdf83bd30?w=600&q=80" alt="Glass Powder" />
+                <div class="product-card-overlay"></div>
+              </div>
+              <div class="product-card-content">
+                <h4 data-ar="زجاج مطحون" data-en="Glass Powder">زجاج مطحون</h4>
+                <p data-ar="زجاج معاد تدويره ومطحون يستخدم في صناعة السيراميك والبلاط كمادة صهر ولإضافة اللمعان للمنتجات." data-en="Recycled and ground glass used in ceramics and tile manufacturing as a flux and to add shine to products.">زجاج معاد تدويره ومطحون يستخدم في صناعة السيراميك والبلاط كمادة صهر ولإضافة اللمعان للمنتجات.</p>
+                <a href="#contact" class="product-card-link">
+                  <span data-ar="طلب عرض سعر" data-en="Request Quote">طلب عرض سعر</span>
+                  <i class="bi bi-arrow-left"></i>
+                </a>
+              </div>
             </div>
           </div>
           
           <!-- Product 7: High Grade Feldspar -->
-          <div class="product-card stagger-item" data-aos="fade-up" data-aos-delay="400">
-            <div class="product-card-image">
-              <img src="https://images.unsplash.com/photo-1504973960431-1c467e159aa4?w=600&q=80" alt="High Grade Feldspar" />
-              <div class="product-card-overlay"></div>
-            </div>
-            <div class="product-card-content">
-              <h4 data-ar="فلسبار درجة أولى" data-en="High Grade Feldspar">فلسبار درجة أولى</h4>
-              <p data-ar="فلسبار عالي الجودة بنسبة نقاء مرتفعة، مثالي للصناعات التي تتطلب مواصفات دقيقة مثل السيراميك الفاخر." data-en="High-quality feldspar with high purity levels, ideal for industries requiring precise specifications like luxury ceramics.">فلسبار عالي الجودة بنسبة نقاء مرتفعة، مثالي للصناعات التي تتطلب مواصفات دقيقة مثل السيراميك الفاخر.</p>
-              <a href="#contact" class="product-card-link">
-                <span data-ar="طلب عرض سعر" data-en="Request Quote">طلب عرض سعر</span>
-                <i class="bi bi-arrow-left"></i>
-              </a>
+          <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+            <div class="product-card stagger-item h-100" data-aos="fade-up" data-aos-delay="400">
+              <div class="product-card-image">
+                <img src="https://images.unsplash.com/photo-1504973960431-1c467e159aa4?w=600&q=80" alt="High Grade Feldspar" />
+                <div class="product-card-overlay"></div>
+              </div>
+              <div class="product-card-content">
+                <h4 data-ar="فلسبار درجة أولى" data-en="High Grade Feldspar">فلسبار درجة أولى</h4>
+                <p data-ar="فلسبار عالي الجودة بنسبة نقاء مرتفعة، مثالي للصناعات التي تتطلب مواصفات دقيقة مثل السيراميك الفاخر." data-en="High-quality feldspar with high purity levels, ideal for industries requiring precise specifications like luxury ceramics.">فلسبار عالي الجودة بنسبة نقاء مرتفعة، مثالي للصناعات التي تتطلب مواصفات دقيقة مثل السيراميك الفاخر.</p>
+                <a href="#contact" class="product-card-link">
+                  <span data-ar="طلب عرض سعر" data-en="Request Quote">طلب عرض سعر</span>
+                  <i class="bi bi-arrow-left"></i>
+                </a>
+              </div>
             </div>
           </div>
           
           <!-- Product 8: Quartz -->
-          <div class="product-card stagger-item" data-aos="fade-up" data-aos-delay="450">
-            <div class="product-card-image">
-              <img src="https://images.unsplash.com/photo-1551431009-a802eeec77b1?w=600&q=80" alt="Quartz" />
-              <div class="product-card-overlay"></div>
-            </div>
-            <div class="product-card-content">
-              <h4 data-ar="كوارتز" data-en="Quartz">كوارتز</h4>
-              <p data-ar="خام الكوارتز عالي النقاء يستخدم في صناعة الزجاج والإلكترونيات والمواد الكاشطة بفضل صلابته العالية." data-en="High-purity quartz used in glass manufacturing, electronics, and abrasives due to its high hardness.">خام الكوارتز عالي النقاء يستخدم في صناعة الزجاج والإلكترونيات والمواد الكاشطة بفضل صلابته العالية.</p>
-              <a href="#contact" class="product-card-link">
-                <span data-ar="طلب عرض سعر" data-en="Request Quote">طلب عرض سعر</span>
-                <i class="bi bi-arrow-left"></i>
-              </a>
+          <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+            <div class="product-card stagger-item h-100" data-aos="fade-up" data-aos-delay="450">
+              <div class="product-card-image">
+                <img src="https://images.unsplash.com/photo-1551431009-a802eeec77b1?w=600&q=80" alt="Quartz" />
+                <div class="product-card-overlay"></div>
+              </div>
+              <div class="product-card-content">
+                <h4 data-ar="كوارتز" data-en="Quartz">كوارتز</h4>
+                <p data-ar="خام الكوارتز عالي النقاء يستخدم في صناعة الزجاج والإلكترونيات والمواد الكاشطة بفضل صلابته العالية." data-en="High-purity quartz used in glass manufacturing, electronics, and abrasives due to its high hardness.">خام الكوارتز عالي النقاء يستخدم في صناعة الزجاج والإلكترونيات والمواد الكاشطة بفضل صلابته العالية.</p>
+                <a href="#contact" class="product-card-link">
+                  <span data-ar="طلب عرض سعر" data-en="Request Quote">طلب عرض سعر</span>
+                  <i class="bi bi-arrow-left"></i>
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -463,41 +443,82 @@
         </div>
         
         <!-- Why Us Grid -->
-        <div class="why-us-grid">
+        <div class="why-us-grid row g-4">
           <!-- Card 1: Quality -->
-          <div class="why-us-card" data-aos="fade-up" data-aos-delay="100">
-            <div class="why-us-card-icon">
-              <i class="bi bi-patch-check"></i>
+          <div class="col-12 col-sm-6 col-lg-3">
+            <div class="why-us-card h-100" data-aos="fade-up" data-aos-delay="100">
+              <div class="why-us-card-icon">
+                <i class="bi bi-patch-check"></i>
+              </div>
+              <h4 data-ar="الجودة العالية" data-en="High Quality">الجودة العالية</h4>
+              <p data-ar="نلتزم بأعلى معايير الجودة في جميع منتجاتنا، مع فحص دقيق لكل شحنة قبل التسليم." data-en="We adhere to the highest quality standards in all our products, with thorough inspection of every shipment before delivery.">نلتزم بأعلى معايير الجودة في جميع منتجاتنا، مع فحص دقيق لكل شحنة قبل التسليم.</p>
             </div>
-            <h4 data-ar="الجودة العالية" data-en="High Quality">الجودة العالية</h4>
-            <p data-ar="نلتزم بأعلى معايير الجودة في جميع منتجاتنا، مع فحص دقيق لكل شحنة قبل التسليم." data-en="We adhere to the highest quality standards in all our products, with thorough inspection of every shipment before delivery.">نلتزم بأعلى معايير الجودة في جميع منتجاتنا، مع فحص دقيق لكل شحنة قبل التسليم.</p>
           </div>
           
           <!-- Card 2: Experience -->
-          <div class="why-us-card" data-aos="fade-up" data-aos-delay="200">
-            <div class="why-us-card-icon">
-              <i class="bi bi-award"></i>
+          <div class="col-12 col-sm-6 col-lg-3">
+            <div class="why-us-card h-100" data-aos="fade-up" data-aos-delay="200">
+              <div class="why-us-card-icon">
+                <i class="bi bi-award"></i>
+              </div>
+              <h4 data-ar="الخبرة الطويلة" data-en="Long Experience">الخبرة الطويلة</h4>
+              <p data-ar="أكثر من 15 عاماً من الخبرة في مجال التعدين وتوريد الخامات المعدنية للصناعات المختلفة." data-en="More than 15 years of experience in mining and supplying mineral raw materials to various industries.">أكثر من 15 عاماً من الخبرة في مجال التعدين وتوريد الخامات المعدنية للصناعات المختلفة.</p>
             </div>
-            <h4 data-ar="الخبرة الطويلة" data-en="Long Experience">الخبرة الطويلة</h4>
-            <p data-ar="أكثر من 15 عاماً من الخبرة في مجال التعدين وتوريد الخامات المعدنية للصناعات المختلفة." data-en="More than 15 years of experience in mining and supplying mineral raw materials to various industries.">أكثر من 15 عاماً من الخبرة في مجال التعدين وتوريد الخامات المعدنية للصناعات المختلفة.</p>
           </div>
           
           <!-- Card 3: Technology -->
-          <div class="why-us-card" data-aos="fade-up" data-aos-delay="300">
-            <div class="why-us-card-icon">
-              <i class="bi bi-cpu"></i>
+          <div class="col-12 col-sm-6 col-lg-3">
+            <div class="why-us-card h-100" data-aos="fade-up" data-aos-delay="300">
+              <div class="why-us-card-icon">
+                <i class="bi bi-cpu"></i>
+              </div>
+              <h4 data-ar="التقنية الحديثة" data-en="Modern Technology">التقنية الحديثة</h4>
+              <p data-ar="نستخدم أحدث التقنيات والمعدات في عمليات الاستخراج والمعالجة لضمان أفضل النتائج." data-en="We use the latest technologies and equipment in extraction and processing operations to ensure the best results.">نستخدم أحدث التقنيات والمعدات في عمليات الاستخراج والمعالجة لضمان أفضل النتائج.</p>
             </div>
-            <h4 data-ar="التقنية الحديثة" data-en="Modern Technology">التقنية الحديثة</h4>
-            <p data-ar="نستخدم أحدث التقنيات والمعدات في عمليات الاستخراج والمعالجة لضمان أفضل النتائج." data-en="We use the latest technologies and equipment in extraction and processing operations to ensure the best results.">نستخدم أحدث التقنيات والمعدات في عمليات الاستخراج والمعالجة لضمان أفضل النتائج.</p>
           </div>
           
           <!-- Card 4: Sustainability -->
-          <div class="why-us-card" data-aos="fade-up" data-aos-delay="400">
-            <div class="why-us-card-icon">
-              <i class="bi bi-globe-americas"></i>
+          <div class="col-12 col-sm-6 col-lg-3">
+            <div class="why-us-card h-100" data-aos="fade-up" data-aos-delay="400">
+              <div class="why-us-card-icon">
+                <i class="bi bi-globe-americas"></i>
+              </div>
+              <h4 data-ar="الاستدامة البيئية" data-en="Environmental Sustainability">الاستدامة البيئية</h4>
+              <p data-ar="نحرص على تطبيق ممارسات صديقة للبيئة في جميع عملياتنا للحفاظ على الموارد الطبيعية." data-en="We ensure the application of environmentally friendly practices in all our operations to preserve natural resources.">نحرص على تطبيق ممارسات صديقة للبيئة في جميع عملياتنا للحفاظ على الموارد الطبيعية.</p>
             </div>
-            <h4 data-ar="الاستدامة البيئية" data-en="Environmental Sustainability">الاستدامة البيئية</h4>
-            <p data-ar="نحرص على تطبيق ممارسات صديقة للبيئة في جميع عملياتنا للحفاظ على الموارد الطبيعية." data-en="We ensure the application of environmentally friendly practices in all our operations to preserve natural resources.">نحرص على تطبيق ممارسات صديقة للبيئة في جميع عملياتنا للحفاظ على الموارد الطبيعية.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= Our Partners ================= -->
+    <section class="partners section" id="partners">
+      <div class="container">
+        <!-- Section Header -->
+        <div class="section-header" data-aos="fade-up">
+          <h2 class="section-title" data-ar="شركاؤنا" data-en="Our Partners">شركاؤنا</h2>
+          <p class="section-subtitle" data-ar="نفتخر بشراكتنا مع كبرى الشركات الصناعية في مصر والشرق الأوسط" data-en="We are proud of our partnerships with major industrial companies in Egypt and the Middle East">نفتخر بشراكتنا مع كبرى الشركات الصناعية في مصر والشرق الأوسط</p>
+        </div>
+        
+        <!-- Partners Logos -->
+        <div class="partners-grid" data-aos="fade-up" data-aos-delay="100">
+          <div class="partner-item">
+            <img src="https://via.placeholder.com/200x100/f7fafc/18214e?text=Partner+1" alt="Partner 1" />
+          </div>
+          <div class="partner-item">
+            <img src="https://via.placeholder.com/200x100/f7fafc/18214e?text=Partner+2" alt="Partner 2" />
+          </div>
+          <div class="partner-item">
+            <img src="https://via.placeholder.com/200x100/f7fafc/18214e?text=Partner+3" alt="Partner 3" />
+          </div>
+          <div class="partner-item">
+            <img src="https://via.placeholder.com/200x100/f7fafc/18214e?text=Partner+4" alt="Partner 4" />
+          </div>
+          <div class="partner-item">
+            <img src="https://via.placeholder.com/200x100/f7fafc/18214e?text=Partner+5" alt="Partner 5" />
+          </div>
+          <div class="partner-item">
+            <img src="https://via.placeholder.com/200x100/f7fafc/18214e?text=Partner+6" alt="Partner 6" />
           </div>
         </div>
       </div>
@@ -513,61 +534,67 @@
         </div>
         
         <!-- News Grid -->
-        <div class="news-grid">
+        <div class="news-grid row g-4">
           <!-- News Card 1 -->
-          <div class="news-card" data-aos="fade-up" data-aos-delay="100">
-            <div class="news-card-image">
-              <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&q=80" alt="News" />
-              <div class="news-card-date">
-                <span class="news-card-date-day">15</span>
-                <span class="news-card-date-month" data-ar="يناير" data-en="JAN">يناير</span>
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="news-card h-100" data-aos-delay="100">
+              <div class="news-card-image">
+                <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&q=80" alt="News" />
+                <div class="news-card-date">
+                  <span class="news-card-date-day">15</span>
+                  <span class="news-card-date-month" data-ar="يناير" data-en="JAN">يناير</span>
+                </div>
               </div>
-            </div>
-            <div class="news-card-content">
-              <h4><a href="#" data-ar="توسعة خطوط الإنتاج لتلبية الطلب المتزايد" data-en="Production Line Expansion to Meet Growing Demand">توسعة خطوط الإنتاج لتلبية الطلب المتزايد</a></h4>
-              <p data-ar="أعلنت الشركة عن خططها لتوسعة خطوط الإنتاج خلال العام الجديد لمواكبة الطلب المتزايد على منتجاتنا في الأسواق المحلية والإقليمية." data-en="The company announced plans to expand production lines during the new year to keep up with the increasing demand for our products in local and regional markets.">أعلنت الشركة عن خططها لتوسعة خطوط الإنتاج خلال العام الجديد لمواكبة الطلب المتزايد على منتجاتنا في الأسواق المحلية والإقليمية.</p>
-              <a href="#" class="news-card-link">
-                <span data-ar="اقرأ المزيد" data-en="Read More">اقرأ المزيد</span>
-                <i class="bi bi-arrow-left"></i>
-              </a>
+              <div class="news-card-content">
+                <h4><a href="#" data-ar="توسعة خطوط الإنتاج لتلبية الطلب المتزايد" data-en="Production Line Expansion to Meet Growing Demand">توسعة خطوط الإنتاج لتلبية الطلب المتزايد</a></h4>
+                <p data-ar="أعلنت الشركة عن خططها لتوسعة خطوط الإنتاج خلال العام الجديد لمواكبة الطلب المتزايد على منتجاتنا في الأسواق المحلية والإقليمية." data-en="The company announced plans to expand production lines during the new year to keep up with the increasing demand for our products in local and regional markets.">أعلنت الشركة عن خططها لتوسعة خطوط الإنتاج خلال العام الجديد لمواكبة الطلب المتزايد على منتجاتنا في الأسواق المحلية والإقليمية.</p>
+                <a href="#" class="news-card-link">
+                  <span data-ar="اقرأ المزيد" data-en="Read More">اقرأ المزيد</span>
+                  <i class="bi bi-arrow-left"></i>
+                </a>
+              </div>
             </div>
           </div>
           
           <!-- News Card 2 -->
-          <div class="news-card" data-aos="fade-up" data-aos-delay="200">
-            <div class="news-card-image">
-              <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&q=80" alt="News" />
-              <div class="news-card-date">
-                <span class="news-card-date-day">08</span>
-                <span class="news-card-date-month" data-ar="يناير" data-en="JAN">يناير</span>
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="news-card h-100" data-aos-delay="200">
+              <div class="news-card-image">
+                <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&q=80" alt="News" />
+                <div class="news-card-date">
+                  <span class="news-card-date-day">08</span>
+                  <span class="news-card-date-month" data-ar="يناير" data-en="JAN">يناير</span>
+                </div>
               </div>
-            </div>
-            <div class="news-card-content">
-              <h4><a href="#" data-ar="شراكة جديدة مع كبرى مصانع السيراميك" data-en="New Partnership with Major Ceramics Factories">شراكة جديدة مع كبرى مصانع السيراميك</a></h4>
-              <p data-ar="وقعنا اتفاقية شراكة استراتيجية مع مجموعة من كبرى مصانع السيراميك في المنطقة لتوريد خامات الفلسبار والكوارتز عالية الجودة." data-en="We signed a strategic partnership agreement with a group of major ceramics factories in the region to supply high-quality feldspar and quartz raw materials.">وقعنا اتفاقية شراكة استراتيجية مع مجموعة من كبرى مصانع السيراميك في المنطقة لتوريد خامات الفلسبار والكوارتز عالية الجودة.</p>
-              <a href="#" class="news-card-link">
-                <span data-ar="اقرأ المزيد" data-en="Read More">اقرأ المزيد</span>
-                <i class="bi bi-arrow-left"></i>
-              </a>
+              <div class="news-card-content">
+                <h4><a href="#" data-ar="شراكة جديدة مع كبرى مصانع السيراميك" data-en="New Partnership with Major Ceramics Factories">شراكة جديدة مع كبرى مصانع السيراميك</a></h4>
+                <p data-ar="وقعنا اتفاقية شراكة استراتيجية مع مجموعة من كبرى مصانع السيراميك في المنطقة لتوريد خامات الفلسبار والكوارتز عالية الجودة." data-en="We signed a strategic partnership agreement with a group of major ceramics factories in the region to supply high-quality feldspar and quartz raw materials.">وقعنا اتفاقية شراكة استراتيجية مع مجموعة من كبرى مصانع السيراميك في المنطقة لتوريد خامات الفلسبار والكوارتز عالية الجودة.</p>
+                <a href="#" class="news-card-link">
+                  <span data-ar="اقرأ المزيد" data-en="Read More">اقرأ المزيد</span>
+                  <i class="bi bi-arrow-left"></i>
+                </a>
+              </div>
             </div>
           </div>
           
           <!-- News Card 3 -->
-          <div class="news-card" data-aos="fade-up" data-aos-delay="300">
-            <div class="news-card-image">
-              <img src="https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?w=600&q=80" alt="News" />
-              <div class="news-card-date">
-                <span class="news-card-date-day">25</span>
-                <span class="news-card-date-month" data-ar="ديسمبر" data-en="DEC">ديسمبر</span>
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="news-card h-100" data-aos-delay="300">
+              <div class="news-card-image">
+                <img src="https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?w=600&q=80" alt="News" />
+                <div class="news-card-date">
+                  <span class="news-card-date-day">25</span>
+                  <span class="news-card-date-month" data-ar="ديسمبر" data-en="DEC">ديسمبر</span>
+                </div>
               </div>
-            </div>
-            <div class="news-card-content">
-              <h4><a href="#" data-ar="حصولنا على شهادة الجودة ISO 9001" data-en="Obtaining ISO 9001 Quality Certification">حصولنا على شهادة الجودة ISO 9001</a></h4>
-              <p data-ar="يسعدنا الإعلان عن حصول الشركة على شهادة الجودة العالمية ISO 9001 تأكيداً على التزامنا بأعلى معايير الجودة في جميع عملياتنا." data-en="We are pleased to announce that the company has obtained the ISO 9001 international quality certificate, confirming our commitment to the highest quality standards in all our operations.">يسعدنا الإعلان عن حصول الشركة على شهادة الجودة العالمية ISO 9001 تأكيداً على التزامنا بأعلى معايير الجودة في جميع عملياتنا.</p>
-              <a href="#" class="news-card-link">
-                <span data-ar="اقرأ المزيد" data-en="Read More">اقرأ المزيد</span>
-                <i class="bi bi-arrow-left"></i>
-              </a>
+              <div class="news-card-content">
+                <h4><a href="#" data-ar="حصولنا على شهادة الجودة ISO 9001" data-en="Obtaining ISO 9001 Quality Certification">حصولنا على شهادة الجودة ISO 9001</a></h4>
+                <p data-ar="يسعدنا الإعلان عن حصول الشركة على شهادة الجودة العالمية ISO 9001 تأكيداً على التزامنا بأعلى معايير الجودة في جميع عملياتنا." data-en="We are pleased to announce that the company has obtained the ISO 9001 international quality certificate, confirming our commitment to the highest quality standards in all our operations.">يسعدنا الإعلان عن حصول الشركة على شهادة الجودة العالمية ISO 9001 تأكيداً على التزامنا بأعلى معايير الجودة في جميع عملياتنا.</p>
+                <a href="#" class="news-card-link">
+                  <span data-ar="اقرأ المزيد" data-en="Read More">اقرأ المزيد</span>
+                  <i class="bi bi-arrow-left"></i>
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -583,11 +610,12 @@
           <p class="section-subtitle" data-ar="نحن هنا للإجابة على استفساراتكم وتلبية احتياجاتكم" data-en="We are here to answer your inquiries and meet your needs">نحن هنا للإجابة على استفساراتكم وتلبية احتياجاتكم</p>
         </div>
         
-        <div class="contact-wrapper">
+        <div class="contact-wrapper row g-4 g-lg-5">
           <!-- Contact Info -->
-          <div class="contact-info" data-aos="fade-left" data-aos-duration="800">
-            <h3 data-ar="معلومات التواصل" data-en="Contact Information">معلومات التواصل</h3>
-            <p data-ar="لا تتردد في التواصل معنا في أي وقت. فريقنا جاهز للرد على جميع استفساراتكم." data-en="Don't hesitate to contact us anytime. Our team is ready to answer all your inquiries.">لا تتردد في التواصل معنا في أي وقت. فريقنا جاهز للرد على جميع استفساراتكم.</p>
+          <div class="col-12 col-lg-5">
+            <div class="contact-info" data-aos="fade-left" data-aos-duration="800">
+              <h3 data-ar="معلومات التواصل" data-en="Contact Information">معلومات التواصل</h3>
+              <p data-ar="لا تتردد في التواصل معنا في أي وقت. فريقنا جاهز للرد على جميع استفساراتكم." data-en="Don't hesitate to contact us anytime. Our team is ready to answer all your inquiries.">لا تتردد في التواصل معنا في أي وقت. فريقنا جاهز للرد على جميع استفساراتكم.</p>
             
             <ul class="contact-list">
               <!-- Address -->
@@ -597,7 +625,7 @@
                 </div>
                 <div class="contact-list-content">
                   <h5 data-ar="العنوان" data-en="Address">العنوان</h5>
-                  <p data-ar="المنطقة الصناعية السابعة، مدينة السادات، محافظة المنوفية، مصر" data-en="7th Industrial Zone, Sadat City, Menoufia Governorate, Egypt">المنطقة الصناعية السابعة، مدينة السادات، محافظة المنوفية، مصر</p>
+                  <p data-ar="المنطقة الصناعية الثامنة، مدينة السادات، محافظة المنوفية، مصر" data-en="8th Industrial Zone, Sadat City, Menoufia Governorate, Egypt">المنطقة الصناعية الثامنة، مدينة السادات، محافظة المنوفية، مصر</p>
                 </div>
               </li>
               <!-- Phone -->
@@ -655,10 +683,12 @@
                 <i class="bi bi-youtube"></i>
               </a>
             </div>
+            </div>
           </div>
           
           <!-- Contact Form -->
-          <div class="contact-form-wrapper" data-aos="fade-right" data-aos-duration="800">
+          <div class="col-12 col-lg-7">
+            <div class="contact-form-wrapper" data-aos="fade-right" data-aos-duration="800">
             <h3 data-ar="أرسل رسالة" data-en="Send a Message">أرسل رسالة</h3>
             <form id="contactForm" class="contact-form">
               <div class="form-row">
@@ -690,20 +720,21 @@
                 <span data-ar="إرسال الرسالة" data-en="Send Message">إرسال الرسالة</span>
               </button>
             </form>
+            </div>
           </div>
         </div>
         
         <!-- Google Map -->
         <div class="mt-5" data-aos="fade-up">
           <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3456.789!2d30.789!3d30.456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zM3DDsDE5JzIyLjAiTiAzMMKwMDAnMTkuMiJF!5e0!3m2!1sen!2seg!4v1234567890"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13700!2d30.516667!3d30.366667!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14587f1a5a1b6b4d%3A0x8d8b8c8a8e8f8a8b!2z2KfZhNmF2YbYt9mC2Kkg2KfZhNi12YbYp9i52YrYqSDYp9mE2KvYp9mF2YbYqdiMINmF2K_ZitmG2Kkg2KfZhNiz2KfYr9in2Kog!5e0!3m2!1sar!2seg!4v1706400000000"
             width="100%" 
             height="400" 
             style="border:0; border-radius: 12px;" 
             allowfullscreen="" 
             loading="lazy" 
             referrerpolicy="no-referrer-when-downgrade"
-            title="Modern Mining Location">
+            title="Modern Mining Location - 8th Industrial Zone, Sadat City">
           </iframe>
         </div>
       </div>
@@ -712,71 +743,79 @@
     <!-- ================= Footer ================= -->
     <footer class="footer" id="footer">
       <div class="container">
-        <div class="footer-main">
+        <div class="footer-main row g-4">
           <!-- Brand Column -->
-          <div class="footer-brand">
-            <img src="assets/images/modern_mining_logo.png" alt="Modern Mining Logo" class="footer-logo" />
-            <p data-ar="المؤسسة الحديثة لتوريد خامات المحاجر والمناجم - رواد تعدين وتوريد الخامات المعدنية عالية الجودة. نخدم القطاع الصناعي في مصر والشرق الأوسط بخبرة تمتد لسنوات." data-en="Modern Mining - Leaders in mining and supplying high-quality mineral raw materials. Serving the industrial sector in Egypt and the Middle East with years of experience.">
-              المؤسسة الحديثة لتوريد خامات المحاجر والمناجم - رواد تعدين وتوريد الخامات المعدنية عالية الجودة. نخدم القطاع الصناعي في مصر والشرق الأوسط بخبرة تمتد لسنوات.
-            </p>
-            <div class="footer-social">
-              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-                <i class="bi bi-facebook"></i>
-              </a>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                <i class="bi bi-linkedin"></i>
-              </a>
-              <a href="https://wa.me/201012345678" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
-                <i class="bi bi-whatsapp"></i>
-              </a>
-              <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
-                <i class="bi bi-youtube"></i>
-              </a>
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="footer-brand">
+              <img src="assets/images/logo/modern_mining_logo.png" alt="Modern Mining Logo" class="footer-logo" />
+              <p data-ar="المؤسسة الحديثة لتوريد خامات المحاجر والمناجم - رواد تعدين وتوريد الخامات المعدنية عالية الجودة. نخدم القطاع الصناعي في مصر والشرق الأوسط بخبرة تمتد لسنوات." data-en="Modern Mining - Leaders in mining and supplying high-quality mineral raw materials. Serving the industrial sector in Egypt and the Middle East with years of experience.">
+                المؤسسة الحديثة لتوريد خامات المحاجر والمناجم - رواد تعدين وتوريد الخامات المعدنية عالية الجودة. نخدم القطاع الصناعي في مصر والشرق الأوسط بخبرة تمتد لسنوات.
+              </p>
+              <div class="footer-social">
+                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                  <i class="bi bi-facebook"></i>
+                </a>
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                  <i class="bi bi-linkedin"></i>
+                </a>
+                <a href="https://wa.me/201012345678" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+                  <i class="bi bi-whatsapp"></i>
+                </a>
+                <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+                  <i class="bi bi-youtube"></i>
+                </a>
+              </div>
             </div>
           </div>
           
           <!-- Quick Links -->
-          <div class="footer-column">
-            <h4 class="footer-title" data-ar="روابط سريعة" data-en="Quick Links">روابط سريعة</h4>
-            <ul class="footer-links">
-              <li><a href="#home" data-ar="الرئيسية" data-en="Home">الرئيسية</a></li>
-              <li><a href="#about" data-ar="من نحن" data-en="About Us">من نحن</a></li>
-              <li><a href="#products" data-ar="منتجاتنا" data-en="Products">منتجاتنا</a></li>
-              <li><a href="#news" data-ar="آخر الأخبار" data-en="News">آخر الأخبار</a></li>
-              <li><a href="#contact" data-ar="اتصل بنا" data-en="Contact">اتصل بنا</a></li>
-            </ul>
+          <div class="col-6 col-md-3 col-lg-2">
+            <div class="footer-column">
+              <h4 class="footer-title" data-ar="روابط سريعة" data-en="Quick Links">روابط سريعة</h4>
+              <ul class="footer-links">
+                <li><a href="#home" data-ar="الرئيسية" data-en="Home">الرئيسية</a></li>
+                <li><a href="#about" data-ar="من نحن" data-en="About Us">من نحن</a></li>
+                <li><a href="#products" data-ar="منتجاتنا" data-en="Products">منتجاتنا</a></li>
+                <li><a href="#news" data-ar="آخر الأخبار" data-en="News">آخر الأخبار</a></li>
+                <li><a href="#contact" data-ar="اتصل بنا" data-en="Contact">اتصل بنا</a></li>
+              </ul>
+            </div>
           </div>
           
           <!-- Products -->
-          <div class="footer-column">
-            <h4 class="footer-title" data-ar="منتجاتنا" data-en="Products">منتجاتنا</h4>
-            <ul class="footer-links">
-              <li><a href="#products" data-ar="فلسبار" data-en="Feldspar">فلسبار</a></li>
-              <li><a href="#products" data-ar="كوارتز" data-en="Quartz">كوارتز</a></li>
-              <li><a href="#products" data-ar="رمل زجاجي" data-en="Silica Sand">رمل زجاجي</a></li>
-              <li><a href="#products" data-ar="كرات طحن ألومينا" data-en="Alumina Balls">كرات طحن ألومينا</a></li>
-              <li><a href="#products" data-ar="زجاج مطحون" data-en="Glass Powder">زجاج مطحون</a></li>
-            </ul>
+          <div class="col-6 col-md-3 col-lg-2">
+            <div class="footer-column">
+              <h4 class="footer-title" data-ar="منتجاتنا" data-en="Products">منتجاتنا</h4>
+              <ul class="footer-links">
+                <li><a href="#products" data-ar="فلسبار" data-en="Feldspar">فلسبار</a></li>
+                <li><a href="#products" data-ar="كوارتز" data-en="Quartz">كوارتز</a></li>
+                <li><a href="#products" data-ar="رمل زجاجي" data-en="Silica Sand">رمل زجاجي</a></li>
+                <li><a href="#products" data-ar="كرات طحن ألومينا" data-en="Alumina Balls">كرات طحن ألومينا</a></li>
+                <li><a href="#products" data-ar="زجاج مطحون" data-en="Glass Powder">زجاج مطحون</a></li>
+              </ul>
+            </div>
           </div>
           
           <!-- Contact Info -->
-          <div class="footer-column">
-            <h4 class="footer-title" data-ar="تواصل معنا" data-en="Contact Us">تواصل معنا</h4>
-            <div class="footer-contact-item">
-              <i class="bi bi-geo-alt-fill"></i>
-              <span data-ar="المنطقة الصناعية السابعة، مدينة السادات، المنوفية، مصر" data-en="7th Industrial Zone, Sadat City, Menoufia, Egypt">المنطقة الصناعية السابعة، مدينة السادات، المنوفية، مصر</span>
-            </div>
-            <div class="footer-contact-item">
-              <i class="bi bi-telephone-fill"></i>
-              <a href="tel:+201012345678" dir="ltr">+20 101 234 5678</a>
-            </div>
-            <div class="footer-contact-item">
-              <i class="bi bi-envelope-fill"></i>
-              <a href="mailto:info@modernmining.com">info@modernmining.com</a>
-            </div>
-            <div class="footer-contact-item">
-              <i class="bi bi-clock-fill"></i>
-              <span data-ar="السبت - الخميس: 8 ص - 5 م" data-en="Sat - Thu: 8 AM - 5 PM">السبت - الخميس: 8 ص - 5 م</span>
+          <div class="col-12 col-lg-4">
+            <div class="footer-column">
+              <h4 class="footer-title" data-ar="تواصل معنا" data-en="Contact Us">تواصل معنا</h4>
+              <div class="footer-contact-item">
+                <i class="bi bi-geo-alt-fill"></i>
+                <span data-ar="المنطقة الصناعية السابعة، مدينة السادات، المنوفية، مصر" data-en="7th Industrial Zone, Sadat City, Menoufia, Egypt">المنطقة الصناعية السابعة، مدينة السادات، المنوفية، مصر</span>
+              </div>
+              <div class="footer-contact-item">
+                <i class="bi bi-telephone-fill"></i>
+                <a href="tel:+201012345678" dir="ltr">+20 101 234 5678</a>
+              </div>
+              <div class="footer-contact-item">
+                <i class="bi bi-envelope-fill"></i>
+                <a href="mailto:info@modernmining.com">info@modernmining.com</a>
+              </div>
+              <div class="footer-contact-item">
+                <i class="bi bi-clock-fill"></i>
+                <span data-ar="السبت - الخميس: 8 ص - 5 م" data-en="Sat - Thu: 8 AM - 5 PM">السبت - الخميس: 8 ص - 5 م</span>
+              </div>
             </div>
           </div>
         </div>
@@ -794,10 +833,18 @@
       </div>
     </footer>
 
-    <!-- ================= Back to Top Button ================= -->
-    <button class="back-to-top" id="backToTop" aria-label="Back to top">
-      <i class="bi bi-arrow-up"></i>
-    </button>
+    <!-- ================= Float Buttons ================= -->
+    <div class="float-buttons">
+      <a href="#contact" class="float-btn float-contact" aria-label="Contact Us">
+        <i class="bi bi-envelope-fill"></i>
+      </a>
+      <a href="https://wa.me/YOUR_PHONE_NUMBER" target="_blank" rel="noopener noreferrer" class="float-btn float-whatsapp" aria-label="WhatsApp">
+        <i class="bi bi-whatsapp"></i>
+      </a>
+      <button class="float-btn float-top" id="backToTop" aria-label="Back to top">
+        <i class="bi bi-arrow-up"></i>
+      </button>
+    </div>
 
     <!-- ================= Scripts ================= -->
     <!-- GSAP Animation Library -->
