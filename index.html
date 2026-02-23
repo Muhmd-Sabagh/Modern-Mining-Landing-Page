@@ -89,44 +89,22 @@
 
     <!-- ================= Header / Hero ================= -->
     <section class="hero" id="home">
-      <!-- Background Image Carousel -->
+      <!-- Background Image -->
       <div class="hero-bg">
-        <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <img src="assets/images/hero/hero-1.jpeg" alt="Mining Background" />
-            </div>
-            <!-- <div class="carousel-item">
-              <img src="assets/images/hero/hero-3.jpeg" alt="Mining Operations" />
-            </div>
-            <div class="carousel-item">
-              <img src="assets/images/hero/hero-4.jpeg" alt="Mineral Processing" />
-            </div>
-            <div class="carousel-item">
-              <img src="assets/images/hero/hero-5.jpeg" alt="Mining Site" />
-            </div>
-            <div class="carousel-item">
-              <img src="assets/images/hero/hero-6.jpeg" alt="Mining Equipment" />
-            </div>
-            <div class="carousel-item">
-              <img src="assets/images/hero/hero-7.jpeg" alt="Mining Products" />
-            </div> -->
-          </div>
+        <img src="assets/images/hero/hero-1.png" alt="Mining Background" />
+      </div>
+      
+      <!-- Badge at Top -->
+      <div class="hero-badge-wrapper">
+        <div class="hero-badge">
+          <i class="bi bi-gem"></i>
+          <span data-ar="المؤسسة الحديثة للتعدين" data-en="Modern Mining Est.">المؤسسة الحديثة للتعدين</span>
         </div>
       </div>
       
-      <!-- Overlay -->
-      <div class="hero-overlay"></div>
-      
-      <!-- Hero Content -->
-      <div class="container d-flex flex-column align-items-center justify-content-center">
+      <!-- Hero Content at Bottom -->
+      <div class="container d-flex flex-column align-items-center justify-content-end">
         <div class="hero-content d-flex flex-column align-items-center justify-content-center text-center" data-aos="fade-up" data-aos-duration="1000">
-          <!-- Badge -->
-          <div class="hero-badge">
-            <i class="bi bi-gem"></i>
-            <span data-ar="المؤسسة الحديثة للتعدين" data-en="Modern Mining Est.">المؤسسة الحديثة للتعدين</span>
-          </div>
-          
           <!-- Main Title -->
           <h1 class="hero-title">
             <span data-ar="من قلب الأرض..." data-en="From the Heart of the Earth...">من قلب الأرض...</span>
@@ -134,8 +112,8 @@
           </h1>
           
           <!-- Subtitle -->
-          <p class="hero-subtitle" data-ar="نحن شركة رائدة في مجال تعدين وتوريد الخامات المعدنية عالية الجودة، نخدم القطاع الصناعي في مصر والشرق الأوسط بخبرة تمتد لسنوات من التميز والالتزام." data-en="A leading company in mining and supplying high-quality mineral raw materials, serving the industrial sector in Egypt and the Middle East with years of excellence and commitment.">
-            نحن شركة رائدة في مجال تعدين وتوريد الخامات المعدنية عالية الجودة، نخدم القطاع الصناعي في مصر والشرق الأوسط بخبرة تمتد لسنوات من التميز والالتزام.
+          <p class="hero-subtitle" data-ar="شركة رائدة في مجال تعدين وتوريد الخامات المعدنية عالية الجودة، نخدم القطاع الصناعي في مصر و قريبا في الشرق الأوسط بخبرة تمتد لسنوات من التميز والالتزام." data-en="A leading company in mining and supplying high-quality mineral raw materials, serving the industrial sector in Egypt and soon in the Middle East with years of excellence and commitment.">
+            شركة رائدة في مجال تعدين وتوريد الخامات المعدنية عالية الجودة، نخدم القطاع الصناعي في مصر وقريبا في الشرق الأوسط بخبرة تمتد لسنوات من التميز والالتزام.
           </p>
           
           <!-- CTA Buttons -->
@@ -151,7 +129,7 @@
           </div>
           
           <!-- Stats -->
-          <div class="hero-stats" data-aos="fade-up" data-aos-delay="300">
+          <div class="hero-stats">
             <div class="hero-stat">
               <div class="hero-stat-value" data-count="15">15+</div>
               <div class="hero-stat-label" data-ar="سنة خبرة" data-en="Years Experience">سنة خبرة</div>
@@ -173,10 +151,10 @@
       </div>
       
       <!-- Scroll Indicator -->
-      <div class="scroll-indicator">
+      <!-- <div class="scroll-indicator">
         <span data-ar="اكتشف المزيد" data-en="Discover More">اكتشف المزيد</span>
         <i class="bi bi-chevron-double-down"></i>
-      </div>
+      </div> -->
     </section>
 
     <!-- ================= About Us ================= -->
@@ -189,9 +167,35 @@
         </div>
         
         <div class="about-content">
-          <!-- About Image -->
+          <!-- About Image Carousel -->
           <div class="about-image" data-aos="fade-left" data-aos-duration="800">
-            <img src="assets/images/about/about-1.jpeg" alt="Mining Operations" />
+            <div id="aboutCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000">
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img src="assets/images/about/about-1.jpeg" alt="Mining Operations" />
+                </div>
+                <div class="carousel-item">
+                  <img src="assets/images/about/about-2.jpeg" alt="Mining Site" />
+                </div>
+                <div class="carousel-item">
+                  <img src="assets/images/about/about-3.jpeg" alt="Mining Equipment" />
+                </div>
+                <div class="carousel-item">
+                  <img src="assets/images/about/about-4.jpeg" alt="Mining Process" />
+                </div>
+                <div class="carousel-item">
+                  <img src="assets/images/about/about-5.jpeg" alt="Mining Products" />
+                </div>
+              </div>
+              <!-- Carousel Indicators -->
+              <div class="carousel-indicators">
+                <button type="button" data-bs-target="#aboutCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#aboutCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#aboutCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#aboutCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                <button type="button" data-bs-target="#aboutCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
+              </div>
+            </div>
             <div class="about-image-badge">
               <span class="about-image-badge-value">15+</span>
               <span class="about-image-badge-label" data-ar="سنة من التميز" data-en="Years of Excellence">سنة من التميز</span>
@@ -251,7 +255,7 @@
             
             <!-- Vision & Mission -->
             <div class="vision-mission">
-              <div class="vm-card" data-aos="fade-up" data-aos-delay="100">
+              <div class="vm-card" data-aos="fade-up" data-aos-delay="70">
                 <h4>
                   <i class="bi bi-eye"></i>
                   <span data-ar="رؤيتنا" data-en="Our Vision">رؤيتنا</span>
@@ -260,7 +264,7 @@
                   أن نكون الشريك الأول والأفضل في مجال توريد الخامات المعدنية على المستوى الإقليمي والدولي.
                 </p>
               </div>
-              <div class="vm-card" data-aos="fade-up" data-aos-delay="200">
+              <div class="vm-card" data-aos="fade-up" data-aos-delay="140">
                 <h4>
                   <i class="bi bi-bullseye"></i>
                   <span data-ar="رسالتنا" data-en="Our Mission">رسالتنا</span>
@@ -286,146 +290,146 @@
         
         <!-- Products Grid -->
         <div class="products-grid row g-4">
-          <!-- Product 1: Alumina Balls -->
+          <!-- Product 1: Mill Gravel -->
           <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
-            <div class="product-card stagger-item h-100" data-aos="fade-up" data-aos-delay="100">
+            <div class="product-card stagger-item h-100" data-aos="fade-up" data-aos-delay="70" data-product="mill-gravel">
               <div class="product-card-image">
-                <img src="assets/images/placeholder.jpg" alt="Alumina Balls" />
+                <img src="assets/images/Products/feldspar.png" alt="Mill Gravel" />
                 <div class="product-card-overlay"></div>
               </div>
               <div class="product-card-content">
-                <h4 data-ar="كرات طحن ألومينا" data-en="Alumina Grinding Balls">كرات طحن ألومينا</h4>
-                <p data-ar="كرات طحن عالية الكثافة مصنوعة من أكسيد الألومنيوم، تستخدم في طحن المواد الخام في صناعات السيراميك والزجاج والدهانات." data-en="High-density grinding balls made from aluminum oxide, used for grinding raw materials in ceramics, glass, and paint industries.">كرات طحن عالية الكثافة مصنوعة من أكسيد الألومنيوم، تستخدم في طحن المواد الخام في صناعات السيراميك والزجاج والدهانات.</p>
-                <a href="#contact" class="product-card-link">
-                  <span data-ar="طلب عرض سعر" data-en="Request Quote">طلب عرض سعر</span>
+                <h4 data-ar="زلط الطواحين" data-en="Mill Gravel">زلط الطواحين</h4>
+                <p data-ar="زلط طواحين عالي النقاء خالي من الشوائب يحافظ على جودة الخامات المطحونة ويضمن ثبات المواصفات." data-en="High-purity mill gravel free from impurities, maintains grinding quality and ensures consistent specifications.">زلط طواحين عالي النقاء خالي من الشوائب يحافظ على جودة الخامات المطحونة ويضمن ثبات المواصفات.</p>
+                <button type="button" class="product-card-link" onclick="openProductModal('mill-gravel')">
+                  <span data-ar="عرض المزيد" data-en="View More">عرض المزيد</span>
                   <i class="bi bi-arrow-left"></i>
-                </a>
+                </button>
               </div>
             </div>
           </div>
           
-          <!-- Product 2: Feldspar -->
+          <!-- Product 2: K-Feldspar -->
           <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
-            <div class="product-card stagger-item h-100" data-aos="fade-up" data-aos-delay="150">
+            <div class="product-card stagger-item h-100" data-aos="fade-up" data-aos-delay="150" data-product="k-feldspar">
               <div class="product-card-image">
-                <img src="assets/images/placeholder.jpg" alt="Feldspar" />
+                <img src="assets/images/Products/feldspar.png" alt="K-Feldspar" />
                 <div class="product-card-overlay"></div>
               </div>
               <div class="product-card-content">
-                <h4 data-ar="فلسبار" data-en="Feldspar">فلسبار</h4>
-                <p data-ar="خام حيوي في صناعة الزجاج والسيراميك، يساهم في خفض درجة حرارة الانصهار وتحسين جودة المنتج النهائي." data-en="A vital raw material in glass and ceramics manufacturing, helps lower melting temperature and improves final product quality.">خام حيوي في صناعة الزجاج والسيراميك، يساهم في خفض درجة حرارة الانصهار وتحسين جودة المنتج النهائي.</p>
-                <a href="#contact" class="product-card-link">
-                  <span data-ar="طلب عرض سعر" data-en="Request Quote">طلب عرض سعر</span>
+                <h4 data-ar="فلسبار بوتاسيومي" data-en="K-Feldspar">فلسبار بوتاسيومي</h4>
+                <p data-ar="فلسبار بوتاسيومي عالي الجودة يتميز بثبات التركيب الكيميائي وكفاءة الانصهار لصناعات السيراميك والزجاج." data-en="High-quality potassium feldspar with stable chemical composition and efficient melting for ceramics and glass industries.">فلسبار بوتاسيومي عالي الجودة يتميز بثبات التركيب الكيميائي وكفاءة الانصهار لصناعات السيراميك والزجاج.</p>
+                <button type="button" class="product-card-link" onclick="openProductModal('k-feldspar')">
+                  <span data-ar="عرض المزيد" data-en="View More">عرض المزيد</span>
                   <i class="bi bi-arrow-left"></i>
-                </a>
+                </button>
               </div>
             </div>
           </div>
           
           <!-- Product 3: Silica Flour -->
           <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
-            <div class="product-card stagger-item h-100" data-aos="fade-up" data-aos-delay="200">
+            <div class="product-card stagger-item h-100" data-aos="fade-up" data-aos-delay="200" data-product="silica-flour">
               <div class="product-card-image">
-                <img src="assets/images/placeholder.jpg" alt="Silica Flour" />
+                <img src="assets/images/Products/feldspar.png" alt="Silica Flour" />
                 <div class="product-card-overlay"></div>
               </div>
               <div class="product-card-content">
-                <h4 data-ar="رمل زجاجي مطحون" data-en="Silica Flour">رمل زجاجي مطحون</h4>
-                <p data-ar="رمل السيليكا المطحون بدقة عالية، يستخدم في صناعة الفيبرجلاس والمواد العازلة والدهانات والطلاءات." data-en="Finely ground silica sand, used in fiberglass manufacturing, insulation materials, paints, and coatings.">رمل السيليكا المطحون بدقة عالية، يستخدم في صناعة الفيبرجلاس والمواد العازلة والدهانات والطلاءات.</p>
-                <a href="#contact" class="product-card-link">
-                  <span data-ar="طلب عرض سعر" data-en="Request Quote">طلب عرض سعر</span>
+                <h4 data-ar="دقيق السيليكا" data-en="Silica Flour">دقيق السيليكا</h4>
+                <p data-ar="دقيق سيليكا بنعومات تصل إلى 45 ميكرون، يستخدم في صناعة الفيبرجلاس والدهانات والطلاءات." data-en="Silica flour with fineness up to 45 microns, used in fiberglass, paints, and coatings industries.">دقيق سيليكا بنعومات تصل إلى 45 ميكرون، يستخدم في صناعة الفيبرجلاس والدهانات والطلاءات.</p>
+                <button type="button" class="product-card-link" onclick="openProductModal('silica-flour')">
+                  <span data-ar="عرض المزيد" data-en="View More">عرض المزيد</span>
                   <i class="bi bi-arrow-left"></i>
-                </a>
+                </button>
               </div>
             </div>
           </div>
           
           <!-- Product 4: Silica Sand -->
           <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
-            <div class="product-card stagger-item h-100" data-aos="fade-up" data-aos-delay="250">
+            <div class="product-card stagger-item h-100" data-aos="fade-up" data-aos-delay="250" data-product="silica-sand">
               <div class="product-card-image">
-                <img src="assets/images/placeholder.jpg" alt="Silica Sand" />
+                <img src="assets/images/Products/feldspar.png" alt="Silica Sand" />
                 <div class="product-card-overlay"></div>
               </div>
               <div class="product-card-content">
-                <h4 data-ar="رمل زجاجي" data-en="Silica Sand">رمل زجاجي</h4>
-                <p data-ar="رمل سيليكا عالي النقاء يستخدم في صناعة الزجاج بأنواعه، البصريات، والصناعات الإلكترونية." data-en="High-purity silica sand used in glass manufacturing, optics, and electronic industries.">رمل سيليكا عالي النقاء يستخدم في صناعة الزجاج بأنواعه، البصريات، والصناعات الإلكترونية.</p>
-                <a href="#contact" class="product-card-link">
-                  <span data-ar="طلب عرض سعر" data-en="Request Quote">طلب عرض سعر</span>
+                <h4 data-ar="رمال السيليكا" data-en="Silica Sand">رمال السيليكا</h4>
+                <p data-ar="رمال سيليكا عالية النقاء بدرجات ومقاسات حبيبية مختلفة لصناعة الزجاج والمسابك والسيراميك." data-en="High-purity silica sand in various grades and grain sizes for glass, foundry, and ceramics industries.">رمال سيليكا عالية النقاء بدرجات ومقاسات حبيبية مختلفة لصناعة الزجاج والمسابك والسيراميك.</p>
+                <button type="button" class="product-card-link" onclick="openProductModal('silica-sand')">
+                  <span data-ar="عرض المزيد" data-en="View More">عرض المزيد</span>
                   <i class="bi bi-arrow-left"></i>
-                </a>
+                </button>
               </div>
             </div>
           </div>
           
-          <!-- Product 5: Feldspar Powder -->
+          <!-- Product 5: Feldspar Grade 2 -->
           <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
-            <div class="product-card stagger-item h-100" data-aos="fade-up" data-aos-delay="300">
+            <div class="product-card stagger-item h-100" data-aos="fade-up" data-aos-delay="300" data-product="feldspar-g2">
               <div class="product-card-image">
-                <img src="assets/images/placeholder.jpg" alt="Feldspar Powder" />
+                <img src="assets/images/Products/feldspar.png" alt="Feldspar Grade 2" />
                 <div class="product-card-overlay"></div>
               </div>
               <div class="product-card-content">
-                <h4 data-ar="فلسبار مطحون" data-en="Feldspar Powder">فلسبار مطحون</h4>
-                <p data-ar="فلسبار مطحون بدرجات نعومة مختلفة حسب متطلبات الاستخدام في صناعات السيراميك والبورسلين والجليز." data-en="Ground feldspar in various fineness grades according to usage requirements in ceramics, porcelain, and glaze industries.">فلسبار مطحون بدرجات نعومة مختلفة حسب متطلبات الاستخدام في صناعات السيراميك والبورسلين والجليز.</p>
-                <a href="#contact" class="product-card-link">
-                  <span data-ar="طلب عرض سعر" data-en="Request Quote">طلب عرض سعر</span>
+                <h4 data-ar="فلسبار درجة ثانية" data-en="Feldspar Grade 2">فلسبار درجة ثانية</h4>
+                <p data-ar="فلسبار مطحون بدرجات نعومة مختلفة تصل حتى 45 ميكرون لصناعات السيراميك والبورسلين والجليز." data-en="Ground feldspar in various fineness grades up to 45 microns for ceramics, porcelain, and glaze industries.">فلسبار مطحون بدرجات نعومة مختلفة تصل حتى 45 ميكرون لصناعات السيراميك والبورسلين والجليز.</p>
+                <button type="button" class="product-card-link" onclick="openProductModal('feldspar-g2')">
+                  <span data-ar="عرض المزيد" data-en="View More">عرض المزيد</span>
                   <i class="bi bi-arrow-left"></i>
-                </a>
+                </button>
               </div>
             </div>
           </div>
           
-          <!-- Product 6: Glass Powder -->
+          <!-- Product 6: Ground Glass -->
           <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
-            <div class="product-card stagger-item h-100" data-aos="fade-up" data-aos-delay="350">
+            <div class="product-card stagger-item h-100" data-aos="fade-up" data-aos-delay="350" data-product="ground-glass">
               <div class="product-card-image">
-                <img src="assets/images/placeholder.jpg" alt="Glass Powder" />
+                <img src="assets/images/Products/feldspar.png" alt="Ground Glass" />
                 <div class="product-card-overlay"></div>
               </div>
               <div class="product-card-content">
-                <h4 data-ar="زجاج مطحون" data-en="Glass Powder">زجاج مطحون</h4>
-                <p data-ar="زجاج معاد تدويره ومطحون يستخدم في صناعة السيراميك والبلاط كمادة صهر ولإضافة اللمعان للمنتجات." data-en="Recycled and ground glass used in ceramics and tile manufacturing as a flux and to add shine to products.">زجاج معاد تدويره ومطحون يستخدم في صناعة السيراميك والبلاط كمادة صهر ولإضافة اللمعان للمنتجات.</p>
-                <a href="#contact" class="product-card-link">
-                  <span data-ar="طلب عرض سعر" data-en="Request Quote">طلب عرض سعر</span>
+                <h4 data-ar="زجاج مطحون" data-en="Ground Glass">زجاج مطحون</h4>
+                <p data-ar="زجاج مطحون بدرجات ونعومات مختلفة خالي من الشوائب لصناعات السيراميك والبلاستيك ومواد البناء." data-en="Ground glass in various grades and fineness, free from impurities for ceramics, plastics, and construction materials.">زجاج مطحون بدرجات ونعومات مختلفة خالي من الشوائب لصناعات السيراميك والبلاستيك ومواد البناء.</p>
+                <button type="button" class="product-card-link" onclick="openProductModal('ground-glass')">
+                  <span data-ar="عرض المزيد" data-en="View More">عرض المزيد</span>
                   <i class="bi bi-arrow-left"></i>
-                </a>
+                </button>
               </div>
             </div>
           </div>
           
-          <!-- Product 7: High Grade Feldspar -->
+          <!-- Product 7: Feldspar Grade 1 -->
           <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
-            <div class="product-card stagger-item h-100" data-aos="fade-up" data-aos-delay="400">
+            <div class="product-card stagger-item h-100" data-aos="fade-up" data-aos-delay="400" data-product="feldspar-g1">
               <div class="product-card-image">
-                <img src="assets/images/placeholder.jpg" alt="High Grade Feldspar" />
+                <img src="assets/images/Products/feldspar.png" alt="Feldspar Grade 1" />
                 <div class="product-card-overlay"></div>
               </div>
               <div class="product-card-content">
-                <h4 data-ar="فلسبار درجة أولى" data-en="High Grade Feldspar">فلسبار درجة أولى</h4>
+                <h4 data-ar="فلسبار درجة أولى" data-en="Feldspar Grade 1">فلسبار درجة أولى</h4>
                 <p data-ar="فلسبار عالي الجودة بنسبة نقاء مرتفعة، مثالي للصناعات التي تتطلب مواصفات دقيقة مثل السيراميك الفاخر." data-en="High-quality feldspar with high purity levels, ideal for industries requiring precise specifications like luxury ceramics.">فلسبار عالي الجودة بنسبة نقاء مرتفعة، مثالي للصناعات التي تتطلب مواصفات دقيقة مثل السيراميك الفاخر.</p>
-                <a href="#contact" class="product-card-link">
-                  <span data-ar="طلب عرض سعر" data-en="Request Quote">طلب عرض سعر</span>
+                <button type="button" class="product-card-link" onclick="openProductModal('feldspar-g1')">
+                  <span data-ar="عرض المزيد" data-en="View More">عرض المزيد</span>
                   <i class="bi bi-arrow-left"></i>
-                </a>
+                </button>
               </div>
             </div>
           </div>
           
           <!-- Product 8: Quartz -->
           <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
-            <div class="product-card stagger-item h-100" data-aos="fade-up" data-aos-delay="450">
+            <div class="product-card stagger-item h-100" data-aos="fade-up" data-aos-delay="450" data-product="quartz">
               <div class="product-card-image">
-                <img src="assets/images/placeholder.jpg" alt="Quartz" />
+                <img src="assets/images/Products/feldspar.png" alt="Quartz" />
                 <div class="product-card-overlay"></div>
               </div>
               <div class="product-card-content">
                 <h4 data-ar="كوارتز" data-en="Quartz">كوارتز</h4>
-                <p data-ar="خام الكوارتز عالي النقاء يستخدم في صناعة الزجاج والإلكترونيات والمواد الكاشطة بفضل صلابته العالية." data-en="High-purity quartz used in glass manufacturing, electronics, and abrasives due to its high hardness.">خام الكوارتز عالي النقاء يستخدم في صناعة الزجاج والإلكترونيات والمواد الكاشطة بفضل صلابته العالية.</p>
-                <a href="#contact" class="product-card-link">
-                  <span data-ar="طلب عرض سعر" data-en="Request Quote">طلب عرض سعر</span>
+                <p data-ar="كوارتز عالي النقاء مجروش ومطحون بمختلف المقاسات والنعومات للاستخدامات الصناعية المتنوعة." data-en="High-purity quartz crushed and ground in various sizes and fineness for diverse industrial applications.">كوارتز عالي النقاء مجروش ومطحون بمختلف المقاسات والنعومات للاستخدامات الصناعية المتنوعة.</p>
+                <button type="button" class="product-card-link" onclick="openProductModal('quartz')">
+                  <span data-ar="عرض المزيد" data-en="View More">عرض المزيد</span>
                   <i class="bi bi-arrow-left"></i>
-                </a>
+                </button>
               </div>
             </div>
           </div>
@@ -446,7 +450,7 @@
         <div class="why-us-grid row g-4">
           <!-- Card 1: Quality -->
           <div class="col-12 col-sm-6 col-lg-3">
-            <div class="why-us-card h-100" data-aos="fade-up" data-aos-delay="100">
+            <div class="why-us-card h-100" data-aos="fade-up" data-aos-delay="70">
               <div class="why-us-card-icon">
                 <i class="bi bi-patch-check"></i>
               </div>
@@ -457,7 +461,7 @@
           
           <!-- Card 2: Experience -->
           <div class="col-12 col-sm-6 col-lg-3">
-            <div class="why-us-card h-100" data-aos="fade-up" data-aos-delay="200">
+            <div class="why-us-card h-100" data-aos="fade-up" data-aos-delay="140">
               <div class="why-us-card-icon">
                 <i class="bi bi-award"></i>
               </div>
@@ -468,7 +472,7 @@
           
           <!-- Card 3: Technology -->
           <div class="col-12 col-sm-6 col-lg-3">
-            <div class="why-us-card h-100" data-aos="fade-up" data-aos-delay="300">
+            <div class="why-us-card h-100" data-aos="fade-up" data-aos-delay="210">
               <div class="why-us-card-icon">
                 <i class="bi bi-cpu"></i>
               </div>
@@ -479,7 +483,7 @@
           
           <!-- Card 4: Sustainability -->
           <div class="col-12 col-sm-6 col-lg-3">
-            <div class="why-us-card h-100" data-aos="fade-up" data-aos-delay="400">
+            <div class="why-us-card h-100" data-aos="fade-up" data-aos-delay="280">
               <div class="why-us-card-icon">
                 <i class="bi bi-globe-americas"></i>
               </div>
@@ -844,6 +848,70 @@
       <button class="float-btn float-top" id="backToTop" aria-label="Back to top">
         <i class="bi bi-arrow-up"></i>
       </button>
+    </div>
+
+    <!-- ================= Product Modal ================= -->
+    <div class="product-modal" id="productModal">
+      <div class="product-modal-overlay"></div>
+      <div class="product-modal-container">
+        <button class="product-modal-close" aria-label="Close modal">
+          <i class="bi bi-x-lg"></i>
+        </button>
+        <div class="product-modal-content">
+          <div class="product-modal-image">
+            <img id="modalProductImage" src="" alt="" />
+          </div>
+          <div class="product-modal-details">
+            <h3 id="modalProductTitle" data-ar="" data-en=""></h3>
+            <p id="modalProductDescription" class="product-modal-desc" data-ar="" data-en=""></p>
+            
+            <!-- Chemical Analysis Table -->
+            <div class="product-modal-specs" id="modalProductSpecs">
+              <h4 data-ar="التحليل الكيميائي" data-en="Chemical Analysis">التحليل الكيميائي</h4>
+              <div class="specs-table-wrapper">
+                <table class="specs-table" id="modalSpecsTable">
+                  <thead>
+                    <tr>
+                      <th data-ar="العنصر" data-en="Item">العنصر</th>
+                      <th data-ar="النسبة %" data-en="Percentage %">النسبة %</th>
+                    </tr>
+                  </thead>
+                  <tbody id="modalSpecsBody">
+                    <!-- Specs will be populated by JavaScript -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            
+            <!-- Product Info -->
+            <div class="product-modal-info" id="modalProductInfo">
+              <div class="info-item" id="modalCodeNo" style="display: none;">
+                <i class="bi bi-upc"></i>
+                <span data-ar="كود المنتج:" data-en="Code No.:">كود المنتج:</span>
+                <strong id="modalCode"></strong>
+              </div>
+              <div class="info-item" id="modalFormulaWrapper" style="display: none;">
+                <i class="bi bi-diagram-3"></i>
+                <span data-ar="الصيغة الكيميائية:" data-en="Chemical Formula:">الصيغة الكيميائية:</span>
+                <strong id="modalFormula"></strong>
+              </div>
+            </div>
+            
+            <!-- Applications -->
+            <div class="product-modal-applications" id="modalApplications">
+              <h4 data-ar="الاستخدامات" data-en="Applications">الاستخدامات</h4>
+              <ul id="modalAppsList">
+                <!-- Applications will be populated by JavaScript -->
+              </ul>
+            </div>
+            
+            <a href="#contact" class="btn btn-primary btn-lg product-modal-cta" onclick="closeProductModal()">
+              <i class="bi bi-envelope-fill"></i>
+              <span data-ar="طلب عرض سعر" data-en="Request Quote">طلب عرض سعر</span>
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
 
     <!-- ================= Scripts ================= -->

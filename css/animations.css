@@ -445,3 +445,15 @@
     background-attachment: scroll;
   }
 }
+
+/* ==================== JS Animation Fallbacks ==================== */
+/* Ensure critical elements are visible even if GSAP fails to initialize */
+/* Add no-js class to html and remove it with JS to enable this fallback */
+.no-js .vm-card,
+.no-js .hero-stat,
+.no-js .product-card,
+.no-js .board-card,
+.no-js .why-us-card {
+  opacity: 1 !important;
+  transform: none !important;
+}

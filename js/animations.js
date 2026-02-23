@@ -86,16 +86,17 @@
       delay: 0.5,
     });
 
-    // Hero Stats Counter Animation
+    // Hero Stats Counter Animation - No ScrollTrigger, animate immediately
+    // Set visible first as fallback
+    gsap.set(".hero-stat", { opacity: 1, y: 0 });
     gsap.from(".hero-stat", {
       y: 30,
       opacity: 0,
       duration: 0.6,
       stagger: 0.15,
       ease: "power2.out",
-      scrollTrigger: {
-        trigger: ".hero-stats",
-      },
+      delay: 0.8,
+      immediateRender: false,
     });
 
     // Section Headers - handled by AOS, no GSAP animation needed
@@ -240,17 +241,20 @@
       },
     });
 
-    // Vision Mission Cards Animation
-    gsap.from(".vm-card", {
-      y: 40,
-      opacity: 0,
-      duration: 0.7,
-      stagger: 0.2,
-      ease: "power2.out",
-      scrollTrigger: {
-        trigger: ".vision-mission",
-        start: "top 80%",
-      },
+    // Vision Mission Cards Animation - Using batch approach like product cards
+    // Set initial hidden state first
+    gsap.set(".vm-card", { opacity: 0, y: 40 });
+
+    ScrollTrigger.batch(".vm-card", {
+      onEnter: (batch) =>
+        gsap.to(batch, {
+          opacity: 1,
+          y: 0,
+          stagger: 0.2,
+          duration: 0.7,
+          ease: "power2.out",
+        }),
+      start: "top 90%",
     });
 
     console.log("GSAP Animations Initialized");
