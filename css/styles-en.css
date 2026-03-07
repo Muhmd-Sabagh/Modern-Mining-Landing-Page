@@ -106,10 +106,6 @@ html[lang="en"] body {
   letter-spacing: var(--ls-tight);
 }
 
-[dir="ltr"] .hero-title {
-  letter-spacing: -0.02em;
-}
-
 [dir="ltr"] .btn {
   font-family: var(--font-english);
 }
