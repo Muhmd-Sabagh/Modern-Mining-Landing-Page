@@ -453,7 +453,7 @@ img {
 }
 
 /* Subtle gradient at bottom for text readability */
-.hero::after {
+/* .hero::after {
   content: "";
   position: absolute;
   bottom: 0;
@@ -468,11 +468,7 @@ img {
   );
   z-index: 1;
   pointer-events: none;
-}
-
-.hero-overlay {
-  display: none;
-}
+} */
 
 .hero .container {
   position: relative;
@@ -1074,41 +1070,74 @@ img {
 }
 
 .partners-grid {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  gap: var(--space-6);
-  align-items: center;
+  display: block;
 }
 
 .partner-item {
   background: var(--neutral-white);
-  padding: var(--space-6);
+  margin: 0 var(--space-3);
+  padding: var(--space-8) var(--space-6);
   border-radius: var(--radius-lg);
-  display: flex;
+  display: flex !important;
   align-items: center;
   justify-content: center;
+  min-height: 150px;
   transition: all var(--transition-base);
-  box-shadow: var(--shadow-sm);
+  box-shadow: var(--shadow-card);
+  text-decoration: none;
 }
 
 .partner-item:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow-md);
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: var(--shadow-card-hover);
+}
+
+.partner-item:focus-visible {
+  outline: 3px solid var(--primary-blue);
+  outline-offset: 4px;
+}
+
+.partner-item:focus-visible img {
+  opacity: 1;
 }
 
 .partner-item img {
+  width: auto;
   max-width: 100%;
   height: auto;
-  max-height: 60px;
+  max-height: 90px;
   object-fit: contain;
-  filter: grayscale(100%);
-  opacity: 0.7;
+  opacity: 0.8;
   transition: all var(--transition-base);
 }
 
 .partner-item:hover img {
-  filter: grayscale(0%);
   opacity: 1;
+}
+
+.partners-grid .slick-slide {
+  outline: none;
+}
+
+.partners-grid .slick-slide > div {
+  height: 100%;
+}
+
+.partners-grid .slick-track {
+  display: flex;
+  align-items: stretch;
+}
+
+.partners-grid .slick-slide {
+  height: auto;
+}
+
+.partners-grid .slick-list {
+  margin: 0 calc(-1 * var(--space-3));
+}
+
+.partners-grid .slick-slide img {
+  width: 100%;
 }
 
 /* ==================== News Section ==================== */

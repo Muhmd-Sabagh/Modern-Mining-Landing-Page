@@ -231,9 +231,10 @@
     visibility: visible !important;
   }
 
-  /* Partners grid responsive */
-  .partners-grid {
-    grid-template-columns: repeat(3, 1fr);
+  .partners-grid .partner-item {
+    margin: 0 var(--space-2);
+    min-height: 130px;
+    padding: var(--space-5) var(--space-4);
   }
 
   .form-row {
@@ -262,6 +263,12 @@
     width: 100%;
   }
 
+  .partners-grid .partner-item {
+    margin: 0 var(--space-1);
+    min-height: 120px;
+    padding: var(--space-4);
+  }
+
   .section-title {
     font-size: var(--fs-2xl);
   }
@@ -282,16 +289,6 @@
 
   .contact-social {
     flex-wrap: wrap;
-  }
-
-  /* Partners grid extra small */
-  .partners-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--space-4);
-  }
-
-  .partner-item {
-    padding: var(--space-4);
   }
 }
 

@@ -257,13 +257,10 @@
         if (current < target) {
           counter.textContent = Math.floor(current) + "+";
           requestAnimationFrame(updateCounter);
+        } else if (target >= 1000) {
+          counter.textContent = (target / 1000).toFixed(0) + "K+";
         } else {
-          // Format the final number
-          if (target >= 1000) {
-            counter.textContent = (target / 1000).toFixed(0) + "K+";
-          } else {
-            counter.textContent = target + "+";
-          }
+          counter.textContent = target + "+";
         }
       };
 
@@ -282,6 +279,43 @@
 
       observer.observe(counter);
     });
+  }
+
+  /* ==================== Partners Slider ==================== */
+  function initPartnersSlider() {
+    const partnersGrid = document.querySelector(".partners-grid");
+    if (!partnersGrid || partnersGrid.dataset.sliderReady === "true") return;
+    if (typeof window.jQuery === "undefined" || !window.jQuery.fn.slick) return;
+
+    const $partnersGrid = window.jQuery(partnersGrid);
+
+    $partnersGrid.slick({
+      slidesToShow: 6,
+      slidesToScroll: 1,
+      autoplay: true,
+      autoplaySpeed: 1500,
+      arrows: false,
+      dots: false,
+      infinite: true,
+      pauseOnHover: false,
+      rtl: document.documentElement.dir === "rtl",
+      responsive: [
+        {
+          breakpoint: 768,
+          settings: {
+            slidesToShow: 4,
+          },
+        },
+        {
+          breakpoint: 520,
+          settings: {
+            slidesToShow: 3,
+          },
+        },
+      ],
+    });
+
+    partnersGrid.dataset.sliderReady = "true";
   }
 
   /* ==================== Preloader ==================== */
@@ -339,6 +373,9 @@
 
     // Initialize counter animation
     animateCounters();
+
+    // Initialize partners slider
+    initPartnersSlider();
 
     // Hide preloader
     hidePreloader();
@@ -399,7 +436,7 @@ const productData = {
     descAr:
       "نوفر خام الفلسبار بعدة أشكال تشغيلية لتلبية احتياجات صناعات السيراميك والزجاج: فلسبار مجروش، فلسبار درجة أولى، وفلسبار مطحون.",
     descEn:
-      "We provide feldspar in multiple processing forms for ceramics and glass: crushed feldspar, first-grade feldspar, and ground feldspar.",
+      "We provide feldspar in multiple processing forms for ceramics and glass: crushed feldspar, first-grade feldspar, and crushed feldspar.",
     image: "assets/images/Products/feldspar.webp",
     variants: [
       {
@@ -446,8 +483,8 @@ const productData = {
       },
       {
         titleAr: "فلسبار مطحون",
-        titleEn: "Ground Feldspar",
-        image: "assets/images/Products/ground-feldspar.webp",
+        titleEn: "Crushed Feldspar",
+        image: "assets/images/Products/crushed-feldspar.webp",
         code: "MD-FS-GR",
         formula: "KAlSi3O8",
         specs: [
@@ -467,14 +504,14 @@ const productData = {
       },
     ],
   },
-  "ground-glass": {
+  "crushed-glass": {
     titleAr: "زجاج مطحون",
-    titleEn: "Ground Glass",
+    titleEn: "Crushed Glass",
     descAr:
       "زجاج مطحون بدرجات نعومة مختلفة ومنخفض الشوائب، مناسب للخلطات الصناعية وتطبيقات السيراميك ومواد البناء.",
     descEn:
-      "Ground glass with controlled fineness and low impurities for ceramic mixes and construction formulations.",
-    image: "assets/images/Products/gound-glass.webp",
+      "Crushed glass with controlled fineness and low impurities for ceramic mixes and construction formulations.",
+    image: "assets/images/Products/crushed-glass.webp",
     code: "MD-GG-G1",
     formula: "SiO2-rich glass",
     specs: [
@@ -497,14 +534,14 @@ const productData = {
       "Resin fillers",
     ],
   },
-  "ground-silica-sand": {
+  "crushed-silica-sand": {
     titleAr: "رمل سيليكا مطحون",
-    titleEn: "Ground Silica Sand",
+    titleEn: "Crushed Silica Sand",
     descAr:
       "سيليكا مطحونة بنعومات متدرجة لتناسب الدهانات، الجليز، والخلطات الصناعية التي تتطلب توزيعاً حبيبياً دقيقاً.",
     descEn:
-      "Ground silica with controlled fineness for paints, glaze systems, and industrial mixes requiring tight particle distribution.",
-    image: "assets/images/Products/gound-silica-sand.webp",
+      "Crushed silica with controlled fineness for paints, glaze systems, and industrial mixes requiring tight particle distribution.",
+    image: "assets/images/Products/crushed-silica-sand.webp",
     code: "MD-GSS-G1",
     formula: "SiO2",
     specs: [
@@ -575,7 +612,7 @@ const productData = {
     descAr:
       "نوفر رمال السيليكا بنوعين رئيسيين لتلبية متطلبات التشغيل المختلفة: رمال سيليكا خام ورمال سيليكا مطحونة بنعومات متعددة.",
     descEn:
-      "We provide silica sand in two main forms to meet different process needs: raw silica sand and ground silica sand with multiple fineness grades.",
+      "We provide silica sand in two main forms to meet different process needs: raw silica sand and crushed silica sand with multiple fineness grades.",
     image: "assets/images/Products/silica-sand.webp",
     variants: [
       {
@@ -601,8 +638,8 @@ const productData = {
       },
       {
         titleAr: "رمال سيليكا مطحونة",
-        titleEn: "Ground Silica Sand",
-        image: "assets/images/Products/gound-silica-sand.webp",
+        titleEn: "Crushed Silica Sand",
+        image: "assets/images/Products/crushed-silica-sand.webp",
         code: "MD-GSS-G1",
         formula: "SiO2",
         specs: [
