@@ -1675,7 +1675,7 @@ textarea.form-control {
   position: relative;
   background: var(--neutral-white);
   border-radius: var(--radius-xl);
-  max-width: 900px;
+  max-width: 700px;
   width: 90%;
   max-height: 90vh;
   overflow-y: auto;
@@ -1718,20 +1718,19 @@ textarea.form-control {
 }
 
 .product-modal-content {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0;
+  display: flex;
+  flex-direction: column;
 }
 
 .product-modal-image {
   position: relative;
   overflow: hidden;
-  border-radius: var(--radius-xl) 0 0 var(--radius-xl);
-  min-height: 400px;
+  border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+  max-height: 400px;
 }
 
 [dir="ltr"] .product-modal-image {
-  border-radius: 0 var(--radius-xl) var(--radius-xl) 0;
+  border-radius: var(--radius-xl) var(--radius-xl) 0 0;
 }
 
 .product-modal-image img {
@@ -1744,7 +1743,13 @@ textarea.form-control {
   padding: var(--space-8);
   display: flex;
   flex-direction: column;
-  gap: var(--space-4);
+  gap: var(--space-5);
+}
+
+.product-modal-summary {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
 }
 
 .product-modal-details h3 {
@@ -1963,7 +1968,7 @@ textarea.form-control {
 
 /* Modal CTA Button */
 .product-modal-cta {
-  margin-top: auto;
+  margin-top: var(--space-2);
   width: 100%;
 }
 
