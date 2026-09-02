@@ -23,7 +23,13 @@
   };
 
   /* ==================== State ==================== */
-  let currentLang = localStorage.getItem("modernmining-lang") || "ar";
+  let currentLang = "ar";
+  try {
+    const savedLang = localStorage.getItem("modernmining-lang");
+    if (savedLang && LANG_CONFIG[savedLang]) currentLang = savedLang;
+  } catch {
+    // Language switching still works when browser storage is unavailable.
+  }
 
   /* ==================== DOM Elements ==================== */
   const langButtons = document.querySelectorAll(".lang-btn");
@@ -48,7 +54,11 @@
     currentLang = lang;
 
     // Save preference
-    localStorage.setItem("modernmining-lang", lang);
+    try {
+      localStorage.setItem("modernmining-lang", lang);
+    } catch {
+      // Ignore storage restrictions and keep the language active for this page.
+    }
 
     // Update document attributes
     document.documentElement.setAttribute("lang", config.lang);
@@ -66,6 +76,9 @@
       btn.classList.remove("active");
       if (btn.getAttribute("data-lang") === lang) {
         btn.classList.add("active");
+        btn.setAttribute("aria-pressed", "true");
+      } else {
+        btn.setAttribute("aria-pressed", "false");
       }
     });
 

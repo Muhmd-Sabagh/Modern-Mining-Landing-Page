@@ -55,6 +55,10 @@
     navbarToggler.classList.toggle("active");
     navbarNav.classList.toggle("active");
     document.body.classList.toggle("menu-open");
+    navbarToggler.setAttribute(
+      "aria-expanded",
+      String(navbarNav.classList.contains("active")),
+    );
   }
 
   function closeMobileMenu() {
@@ -62,6 +66,7 @@
     navbarToggler.classList.remove("active");
     navbarNav.classList.remove("active");
     document.body.classList.remove("menu-open");
+    navbarToggler.setAttribute("aria-expanded", "false");
   }
 
   /* ==================== Smooth Scroll ==================== */
@@ -103,6 +108,7 @@
   /* ==================== Contact Form Handling ==================== */
   function handleContactForm(e) {
     e.preventDefault();
+    const isArabic = document.documentElement.lang === "ar";
 
     // Get form data
     const formData = new FormData(contactForm);
@@ -110,35 +116,43 @@
 
     // Basic validation
     if (!data.name || !data.email || !data.message) {
-      showNotification("يرجى ملء جميع الحقول المطلوبة", "error");
+      showNotification(
+        isArabic
+          ? "يرجى ملء جميع الحقول المطلوبة"
+          : "Please complete all required fields.",
+        "error",
+      );
       return;
     }
 
     // Email validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(data.email)) {
-      showNotification("يرجى إدخال بريد إلكتروني صحيح", "error");
+      showNotification(
+        isArabic
+          ? "يرجى إدخال بريد إلكتروني صحيح"
+          : "Please enter a valid email address.",
+        "error",
+      );
       return;
     }
 
-    // Show loading state
-    const submitBtn = contactForm.querySelector('button[type="submit"]');
-    const originalText = submitBtn.innerHTML;
-    submitBtn.innerHTML = '<span class="spinner"></span> جاري الإرسال...';
-    submitBtn.disabled = true;
+    const subject = data.subject || (isArabic ? "استفسار من الموقع" : "Website inquiry");
+    const body = [
+      `${isArabic ? "الاسم" : "Name"}: ${data.name}`,
+      `${isArabic ? "البريد الإلكتروني" : "Email"}: ${data.email}`,
+      `${isArabic ? "الهاتف" : "Phone"}: ${data.phone || "-"}`,
+      "",
+      data.message,
+    ].join("\n");
 
-    // Simulate form submission (replace with actual API call)
-    setTimeout(() => {
-      // Reset button
-      submitBtn.innerHTML = originalText;
-      submitBtn.disabled = false;
-
-      // Show success message
-      showNotification("تم إرسال رسالتك بنجاح! سنتواصل معك قريباً.", "success");
-
-      // Reset form
-      contactForm.reset();
-    }, 2000);
+    window.location.href = `mailto:sales@modernmining.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    showNotification(
+      isArabic
+        ? "تم فتح تطبيق البريد. راجع الرسالة ثم اضغط إرسال."
+        : "Your email app was opened. Review the message, then send it.",
+      "success",
+    );
   }
 
   /* ==================== Notification System ==================== */
@@ -282,12 +296,19 @@
   }
 
   /* ==================== Partners Slider ==================== */
-  function initPartnersSlider() {
+  function initPartnersSlider(force = false) {
     const partnersGrid = document.querySelector(".partners-grid");
-    if (!partnersGrid || partnersGrid.dataset.sliderReady === "true") return;
+    if (!partnersGrid) return;
     if (typeof window.jQuery === "undefined" || !window.jQuery.fn.slick) return;
 
     const $partnersGrid = window.jQuery(partnersGrid);
+
+    if (force && $partnersGrid.hasClass("slick-initialized")) {
+      $partnersGrid.slick("unslick");
+      delete partnersGrid.dataset.sliderReady;
+    }
+
+    if (partnersGrid.dataset.sliderReady === "true") return;
 
     $partnersGrid.slick({
       slidesToShow: 6,
@@ -343,6 +364,13 @@
       navbarToggler.addEventListener("click", toggleMobileMenu);
     }
 
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && navbarNav?.classList.contains("active")) {
+        closeMobileMenu();
+        navbarToggler?.focus();
+      }
+    });
+
     // Smooth scroll for nav links
     navLinks.forEach((link) => {
       link.addEventListener("click", smoothScroll);
@@ -377,6 +405,10 @@
     // Initialize partners slider
     initPartnersSlider();
 
+    document.addEventListener("languageChanged", () => {
+      initPartnersSlider(true);
+    });
+
     // Hide preloader
     hidePreloader();
 
@@ -407,7 +439,7 @@ const productData = {
       "كرات طحن ألومينا عالية الكثافة والصلادة لضمان كفاءة طحن أعلى ومعدل تآكل منخفض داخل الطواحين.",
     descEn:
       "High-density, high-hardness alumina grinding balls designed for efficient milling and low wear rates.",
-    image: "assets/images/Products/alumina-balls.webp",
+    image: "assets/images/products/alumina-balls.webp",
     code: "MD-AB-G1",
     formula: "Al2O3",
     specs: [
@@ -437,12 +469,12 @@ const productData = {
       "نوفر خام الفلسبار بعدة أشكال تشغيلية لتلبية احتياجات صناعات السيراميك والزجاج: فلسبار مجروش، فلسبار درجة أولى، وفلسبار مطحون.",
     descEn:
       "We provide feldspar in multiple processing forms for ceramics and glass: crushed feldspar, first-grade feldspar, and crushed feldspar.",
-    image: "assets/images/Products/feldspar.webp",
+    image: "assets/images/products/feldspar.webp",
     variants: [
       {
         titleAr: "فلسبار مجروش (عادي)",
         titleEn: "Feldspar Rocks (Regular)",
-        image: "assets/images/Products/feldspar.webp",
+        image: "assets/images/products/feldspar.webp",
         code: "MD-FS-R",
         formula: "KAlSi3O8",
         specs: [
@@ -458,7 +490,7 @@ const productData = {
       {
         titleAr: "فلسبار درجة أولى",
         titleEn: "Feldspar Grade 1",
-        image: "assets/images/Products/feldspar-deg-1.webp",
+        image: "assets/images/products/feldspar-deg-1.webp",
         code: "MD-FS-G1",
         formula: "KAlSi3O8",
         specs: [
@@ -484,7 +516,7 @@ const productData = {
       {
         titleAr: "فلسبار مطحون",
         titleEn: "Crushed Feldspar",
-        image: "assets/images/Products/crushed-feldspar.webp",
+        image: "assets/images/products/crushed-feldspar.webp",
         code: "MD-FS-GR",
         formula: "KAlSi3O8",
         specs: [
@@ -511,7 +543,7 @@ const productData = {
       "زجاج مطحون بدرجات نعومة مختلفة ومنخفض الشوائب، مناسب للخلطات الصناعية وتطبيقات السيراميك ومواد البناء.",
     descEn:
       "Crushed glass with controlled fineness and low impurities for ceramic mixes and construction formulations.",
-    image: "assets/images/Products/crushed-glass.webp",
+    image: "assets/images/products/crushed-glass.webp",
     code: "MD-GG-G1",
     formula: "SiO2-rich glass",
     specs: [
@@ -541,7 +573,7 @@ const productData = {
       "سيليكا مطحونة بنعومات متدرجة لتناسب الدهانات، الجليز، والخلطات الصناعية التي تتطلب توزيعاً حبيبياً دقيقاً.",
     descEn:
       "Crushed silica with controlled fineness for paints, glaze systems, and industrial mixes requiring tight particle distribution.",
-    image: "assets/images/Products/crushed-silica-sand.webp",
+    image: "assets/images/products/crushed-silica-sand.webp",
     code: "MD-GSS-G1",
     formula: "SiO2",
     specs: [
@@ -561,7 +593,7 @@ const productData = {
       "زلط طواحين قوي ومنتقى لتحسين أداء الطحن والحفاظ على ثبات الجودة داخل خطوط الإنتاج.",
     descEn:
       "Selected durable mill gravel that improves grinding performance and process consistency.",
-    image: "assets/images/Products/mill-gravel.webp",
+    image: "assets/images/products/mill-gravel.webp",
     code: "MD-MG-G1",
     specs: [
       { item: "Material", value: "High-silica natural stones" },
@@ -588,7 +620,7 @@ const productData = {
       "كوارتز عالي النقاء مجروش ومطحون بمقاسات متنوعة ليلبي احتياجات صناعات الزجاج والسيراميك والتطبيقات الدقيقة.",
     descEn:
       "High-purity quartz in crushed and ground forms for glass, ceramics, and precision industrial applications.",
-    image: "assets/images/Products/quartz.webp",
+    image: "assets/images/products/quartz.webp",
     code: "MD-Q-G1",
     formula: "SiO2",
     specs: [
@@ -613,12 +645,12 @@ const productData = {
       "نوفر رمال السيليكا بنوعين رئيسيين لتلبية متطلبات التشغيل المختلفة: رمال سيليكا خام ورمال سيليكا مطحونة بنعومات متعددة.",
     descEn:
       "We provide silica sand in two main forms to meet different process needs: raw silica sand and crushed silica sand with multiple fineness grades.",
-    image: "assets/images/Products/silica-sand.webp",
+    image: "assets/images/products/silica-sand.webp",
     variants: [
       {
         titleAr: "رمال سيليكا خام",
         titleEn: "Raw Silica Sand",
-        image: "assets/images/Products/silica-sand.webp",
+        image: "assets/images/products/silica-sand.webp",
         code: "MD-SS-R",
         formula: "SiO2",
         specs: [
@@ -639,7 +671,7 @@ const productData = {
       {
         titleAr: "رمال سيليكا مطحونة",
         titleEn: "Crushed Silica Sand",
-        image: "assets/images/Products/crushed-silica-sand.webp",
+        image: "assets/images/products/crushed-silica-sand.webp",
         code: "MD-GSS-G1",
         formula: "SiO2",
         specs: [
@@ -654,6 +686,35 @@ const productData = {
       },
     ],
   },
+  "glass-crushing": {
+    titleAr: "تكسير الزجاج",
+    titleEn: "Glass Crushing",
+    descAr:
+      "خدمات تكسير وفرز الزجاج وتجهيزه بمقاسات مخصصة وفق متطلبات العميل، مع التحكم في الشوائب لضمان خام متجانس وجاهز لإعادة الاستخدام.",
+    descEn:
+      "Glass crushing and sorting services with customer-specific output sizes and contamination control for consistent, reusable material.",
+    image: "assets/images/products/shattered-glass.webp",
+    code: "MM-SVC-02",
+    specs: [
+      { item: "Feed Type", value: "Industrial and recycled glass scrap" },
+      { item: "Output Size", value: "Customized to customer requirements" },
+      { item: "Sorting", value: "Foreign-material removal before crushing" },
+      { item: "Contamination Control", value: "Controlled during processing" },
+      { item: "Batch Consistency", value: "High" },
+    ],
+    applicationsAr: [
+      "إعادة تدوير الزجاج",
+      "تجهيز خامات صناعة الزجاج",
+      "السيراميك ومواد البناء",
+      "تقليل المخلفات الصناعية",
+    ],
+    applicationsEn: [
+      "Glass recycling",
+      "Glass manufacturing feed preparation",
+      "Ceramics and construction materials",
+      "Industrial waste reduction",
+    ],
+  },
   "sanitary-ware-scrap-grinding": {
     titleAr: "تكسير وطحن كسر الصحى والسيراميك",
     titleEn: "Sanitary Ware Scrap Crushing & Grinding",
@@ -661,15 +722,15 @@ const productData = {
       "خدمات طحن كسر الصحى والسيراميك وفق معايير تشغيل دقيقة مع التحكم فى المقاسات والنعومات لضمان منتج نهائى متجانس.",
     descEn:
       "Crushing and grinding services for sanitary ware and ceramic scraps with strict size and fineness control for homogeneous final output.",
-    image: "assets/images/Products/sanitary-ware-scrap.webp",
+    image: "assets/images/products/sanitary-ware-scrap.webp",
     detailImages: [
       {
-        src: "assets/images/Products/sanitary-ware-scrap.webp",
+        src: "assets/images/products/sanitary-ware-scrap.webp",
         altAr: "تكسير وطحن كسر الصحى والسيراميك - صورة 1",
         altEn: "Sanitary Ware Scrap Crushing & Grinding - Image 1",
       },
       {
-        src: "assets/images/Products/sanitary-ware-scrap-1.webp",
+        src: "assets/images/products/sanitary-ware-scrap-1.webp",
         altAr: "تكسير وطحن كسر الصحى والسيراميك - صورة 2",
         altEn: "Sanitary Ware Scrap Crushing & Grinding - Image 2",
       },
@@ -702,6 +763,8 @@ function getCurrentLang() {
   return document.documentElement.lang === "ar" ? "ar" : "en";
 }
 
+let lastModalTrigger = null;
+
 // Open product modal
 function openProductModal(productId) {
   const product = productData[productId];
@@ -710,12 +773,15 @@ function openProductModal(productId) {
   const modal = document.getElementById("productModal");
   const lang = getCurrentLang();
   const isArabic = lang === "ar";
+  lastModalTrigger = document.activeElement;
 
   // Set image
-  document.getElementById("modalProductImage").src = product.image;
-  document.getElementById("modalProductImage").alt = isArabic
-    ? product.titleAr
-    : product.titleEn;
+  const modalProductImage = document.getElementById("modalProductImage");
+  modalProductImage.src = product.image;
+  modalProductImage.alt = isArabic ? product.titleAr : product.titleEn;
+  modalProductImage
+    .closest(".product-modal-image")
+    ?.classList.remove("image-updated");
 
   // Set title
   const titleEl = document.getElementById("modalProductTitle");
@@ -736,7 +802,14 @@ function openProductModal(productId) {
       .map(
         (img) => `
           <figure class="product-modal-gallery-item">
-            <img src="${img.src}" alt="${isArabic ? img.altAr : img.altEn}" />
+            <button
+              class="product-image-trigger product-gallery-thumb"
+              type="button"
+              aria-label="${isArabic ? "عرض كصورة رئيسية" : "Show as main image"}"
+              aria-pressed="false"
+            >
+              <img src="${img.src}" alt="${isArabic ? img.altAr : img.altEn}" />
+            </button>
           </figure>
         `,
       )
@@ -774,7 +847,14 @@ function openProductModal(productId) {
         return `
           <article class="product-variant-card">
             <div class="product-variant-header">
-              <img src="${variant.image}" alt="${variantTitle}" />
+              <button
+                class="product-image-trigger product-variant-thumb"
+                type="button"
+                aria-label="${isArabic ? "عرض كصورة رئيسية" : "Show as main image"}: ${variantTitle}"
+                aria-pressed="false"
+              >
+                <img src="${variant.image}" alt="${variantTitle}" />
+              </button>
               <div>
                 <h5>${variantTitle}</h5>
                 <p>${isArabic ? "نوع فلسبار" : "Feldspar Type"}</p>
@@ -851,15 +931,24 @@ function openProductModal(productId) {
   }
 
   // Show modal
+  const modalContainer = modal.querySelector(".product-modal-container");
+  if (modalContainer) modalContainer.scrollTop = 0;
   modal.classList.add("active");
+  modal.setAttribute("aria-hidden", "false");
   document.body.style.overflow = "hidden";
+  requestAnimationFrame(() => modal.querySelector(".product-modal-close")?.focus());
 }
 
 // Close product modal
 function closeProductModal() {
   const modal = document.getElementById("productModal");
   modal.classList.remove("active");
+  modal.setAttribute("aria-hidden", "true");
   document.body.style.overflow = "";
+  if (lastModalTrigger instanceof HTMLElement) {
+    lastModalTrigger.focus();
+  }
+  lastModalTrigger = null;
 }
 
 // Initialize modal event listeners
@@ -867,6 +956,36 @@ document.addEventListener("DOMContentLoaded", function () {
   const modal = document.getElementById("productModal");
 
   if (modal) {
+    modal.addEventListener("click", function (e) {
+      const trigger = e.target.closest(".product-image-trigger");
+      if (!trigger) return;
+
+      const thumbnail = trigger.querySelector("img");
+      const mainImage = document.getElementById("modalProductImage");
+      if (!thumbnail || !mainImage) return;
+
+      mainImage.src = thumbnail.src;
+      mainImage.alt = thumbnail.alt;
+
+      modal.querySelectorAll(".product-image-trigger").forEach((button) => {
+        const isActive = button === trigger;
+        button.classList.toggle("active", isActive);
+        button.setAttribute("aria-pressed", String(isActive));
+      });
+
+      const imageContainer = mainImage.closest(".product-modal-image");
+      if (imageContainer) {
+        imageContainer.classList.remove("image-updated");
+        void imageContainer.offsetWidth;
+        imageContainer.classList.add("image-updated");
+      }
+
+      const modalContainer = modal.querySelector(".product-modal-container");
+      if (modalContainer) {
+        modalContainer.scrollTo({ top: 0, behavior: "smooth" });
+      }
+    });
+
     // Close on overlay click
     modal
       .querySelector(".product-modal-overlay")
@@ -881,6 +1000,28 @@ document.addEventListener("DOMContentLoaded", function () {
     document.addEventListener("keydown", function (e) {
       if (e.key === "Escape" && modal.classList.contains("active")) {
         closeProductModal();
+        return;
+      }
+
+      if (e.key === "Tab" && modal.classList.contains("active")) {
+        const focusable = [...modal.querySelectorAll(
+          'a[href], button:not([disabled]), input:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])',
+        )].filter((element) => element.offsetParent !== null);
+
+        if (focusable.length === 0) {
+          e.preventDefault();
+          return;
+        }
+
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+        if (e.shiftKey && document.activeElement === first) {
+          e.preventDefault();
+          last.focus();
+        } else if (!e.shiftKey && document.activeElement === last) {
+          e.preventDefault();
+          first.focus();
+        }
       }
     });
   }

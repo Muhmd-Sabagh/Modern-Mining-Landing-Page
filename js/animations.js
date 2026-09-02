@@ -45,9 +45,12 @@
       return;
     }
 
-    // Skip GSAP animations on mobile for better performance
-    if (window.innerWidth < 768) {
-      console.log("GSAP animations disabled on mobile");
+    // Skip motion-heavy effects on mobile and when reduced motion is requested.
+    if (
+      window.innerWidth < 768 ||
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    ) {
+      console.log("GSAP animations disabled");
       return;
     }
 
@@ -315,6 +318,13 @@
 
   /* ==================== Hover Effects Enhancement ==================== */
   function initHoverEffects() {
+    if (
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches ||
+      window.matchMedia("(pointer: coarse)").matches
+    ) {
+      return;
+    }
+
     // Product card hover tilt effect
     const productCards = document.querySelectorAll(".product-card");
 
@@ -407,7 +417,7 @@
       const scrollTop = window.scrollY;
       const docHeight =
         document.documentElement.scrollHeight - window.innerHeight;
-      const scrollPercent = (scrollTop / docHeight) * 100;
+      const scrollPercent = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
       progressBar.style.width = `${scrollPercent}%`;
     });
   }
